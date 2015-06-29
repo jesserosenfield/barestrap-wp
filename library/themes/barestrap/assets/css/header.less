@@ -1,0 +1,157 @@
+/* =============================================================================
+	Header
+   ========================================================================== */
+   
+.logo {
+	width: 252px;
+	height: 56px;
+	float: left;
+	display: block;
+	background: url(assets/images/logo.png) no-repeat
+}
+
+
+/* =============================================================================
+	Responsive Header Menu Structure
+   ========================================================================== */
+
+.resp-header-menu {
+
+}
+
+// Position mobile submenus
+.resp-header-menu .sub-menu-inner {
+	padding: 6px 0 12px 40px;
+	.transitionfix
+}
+
+// Hide main menu links so we can show sub toggle buttons
+.resp-header-menu .menu-item-has-children .main-menu-link {
+	display: none
+}
+
+.resp-header-menu-sub-toggle:after {
+	content: "–";
+	margin-left: 5px
+}
+
+.resp-header-menu-sub-toggle.collapsed:after {
+	content: "+"
+}
+
+@media (min-width: 768px) {	
+	.resp-header-menu {
+		float: right
+	}
+	
+	.resp-header-menu-li,
+	.resp-header-menu .menu-item-has-children .main-menu-link {
+		display: inline-block
+	}
+	
+	.resp-header-menu-sub-toggle,
+	.resp-header-menu-sub-toggle:after {
+		display: none
+	}
+	
+	.sub-menu .resp-header-menu-li {
+		display: block
+	}
+	
+} /* end media query */
+
+
+/* =============================================================================
+	Nav Collapse Layout
+   ========================================================================== */
+
+.nav-toggle {
+  display: block;
+  width: 100%;
+  padding: 0 5%;
+  text-align: right;
+  height: 56px;
+  position: relative;
+  z-index: 3;
+  background: none;
+  color: #000;
+  
+  > span {
+    background: #000;
+    display: inline-block;
+    height: 4px;
+ 	margin-left: 10px;
+    position: relative;
+    transition: .3s;
+    width: 28px;
+    left: 0;
+    top: -4px;
+
+    &:before,
+    &:after {
+      background: #000;
+      display: inline-block;
+      content: '';
+      height: 4px;
+      position: absolute;
+      top: -8px;
+      transition: .3s;
+	  .transitionfix;
+      width: 28px;
+      left: 0;
+    }
+
+    &:after {
+      top: auto;
+      bottom: -8px;
+    }
+  }
+
+  &.active {
+
+    > span {
+      background: none;
+
+      &:before,
+      &:after {
+        transform-origin: 50% 50%;
+        bottom: 0;
+        top:0;
+        width: 30px;
+      }
+
+      &:before {
+        -webkit-transform: rotate3d(0,0,1,45deg);
+        -moz-transform: rotate3d(0,0,1,45deg);
+        -o-transform: rotate3d(0,0,1,45deg);
+        -ms-transform: rotate3d(0,0,1,45deg);
+        transform: rotate3d(0,0,1,45deg);
+      }
+
+      &:after {
+        -webkit-transform: rotate3d(0,0,1,-45deg);
+        -moz-transform: rotate3d(0,0,1,-45deg);
+        -o-transform: rotate3d(0,0,1,-45deg);
+        -ms-transform: rotate3d(0,0,1,-45deg);
+        transform: rotate3d(0,0,1,-45deg);
+      }
+    }
+  }
+}
+	
+
+@media (min-width: 768px) {
+	.nav-toggle {
+		display: none
+	}
+	
+	.nav-collapse {
+		height: auto !important;
+		display: block !important;
+		.transition(none, 0s)
+	}
+	
+	.nav-collapse ul {
+		padding-bottom: 0
+	}
+} /* end media query */

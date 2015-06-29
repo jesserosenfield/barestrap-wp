@@ -1,0 +1,42 @@
+/* =============================================================================
+	General
+   ========================================================================== */
+
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+	font-weight: normal;
+	color: @text
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+}
+
+a {text-decoration: none; color: @link; .transition(color)}
+
+.inner {
+	max-width: 640px;
+	padding: 0 20px;
+	margin: 0 auto;
+	.box-sizing()
+}
+
+@media (min-width: 768px) {
+	.inner {
+		max-width: 1260px;
+		padding: 0 40px
+	}
+}
+
+#content {
+	position: relative
+}
+
+.ajax-fade {
+	.transition(opacity, .4s);
+	-webkit-backface-visibility: hidden
+}
+
+.loading-switch .ajax-fade,
+.loading-out .ajax-fade {.opacity(0)}
