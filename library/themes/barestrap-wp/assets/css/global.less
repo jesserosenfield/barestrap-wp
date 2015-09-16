@@ -1,0 +1,544 @@
+/* =============================================================================
+	General
+   ========================================================================== */
+
+body {
+	position: relative
+}
+
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+	font-weight: normal;
+	line-height: 24px;
+	font-size: 16px;
+	color: @text;
+	position: relative
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+}
+
+a {text-decoration: none; color: @link; .transition(color)}
+
+.inner {
+	max-width: 640px;
+	padding: 0 20px;
+	margin: 0 auto;
+	.box-sizing()
+}
+
+.container-fluid .inner {
+	padding: 0
+}
+
+.container-fluid .inner > .col-xs-12 {
+	padding: 0
+}
+
+@media (min-width: 768px) {
+	.inner,
+	.container-fluid .inner {
+		max-width: 1260px;
+		padding: 0 40px
+	}
+	
+	.container-fluid .inner > .col-xs-12 {
+		padding: 0 15px
+	}
+}
+
+#content {
+	position: relative
+}
+
+.content-block {
+	padding-top: 36px;
+	padding-bottom: 36px
+}
+
+@media (min-width: 768px) {
+	.content-block {
+		padding-top: 60px;
+		padding-bottom: 60px
+	}
+} /* end media query */
+
+.ajax-fade {
+	.transition(opacity, .4s);
+	-webkit-backface-visibility: hidden
+}
+
+#switcheroo {
+	position: relative;
+	z-index: 2
+}	
+
+.loading-switch .ajax-fade,
+.loading-out .ajax-fade {.opacity(0)}
+
+.search-submit-inside.search-form {
+	width: 150px;
+}
+
+.search-submit-inside.search-form .search-input {
+	padding-left: 35px
+}
+
+.search-submit {
+	height: 34px;
+	width: 30px
+}
+
+.search-submit-inside .search-submit {
+	position: absolute;
+	left: 1px
+}
+
+
+/* =============================================================================
+	Accordion Reset
+   ========================================================================== */
+
+.internal-accordion .panel,
+.internal-accordion .panel-body {
+	margin-top: 1px !important;
+	.box-shadow(0,0,0,0);
+	.border-radius(0);
+	border: none !important
+}
+
+.internal-accordion .panel-heading {
+	background: none;
+	padding: 0
+}
+
+.internal-accordion .panel-title a {
+	display: block;
+	outline: none;
+}
+
+
+
+/* =============================================================================
+	Flickity
+   ========================================================================== */
+
+.gallery-cell {
+	width: 100%;
+	top: 0;
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.gallery-cell:active {
+	cursor: grabbing !important;
+	cursor: -webkit-grabbing !important;
+	cursor: -moz-grabbing !important;
+}
+
+.flickity-viewport {
+	position: relative;
+	overflow: hidden
+}
+
+
+/* =============================================================================
+	Post Content
+   ========================================================================== */
+
+.post-content p,
+.post-content ol,
+.post-content ul {
+	margin-bottom: 24px;
+	clear: both
+}
+
+.post-content .alignleft + *,
+.post-content .alignleft + *,
+.post-content .alignleft + * {
+	clear: right
+}
+
+.post-content .alignright + *,
+.post-content .alignright + *,
+.post-content .alignright + * {
+	clear: left
+}
+
+.post-content .alignright + * + *,
+.post-content .alignleft + * + *,
+.post-content .alignright + * + *,
+.post-content .alignleft + * + * {
+	clear: both
+}
+
+.post-content ol,
+.post-content ul {
+	margin-left: 20px;
+	margin-right: 20px
+}
+
+@media (min-width: 768px) {
+	.post-content ol,
+	.post-content ul {
+		margin-left: 0px;
+		margin-right: 0px
+	}
+
+	.post-content p,
+	.post-content ol,
+	.post-content ul {
+		margin-bottom: 30px;
+	}
+} /* end media query */
+
+.post-content li {
+	position: relative;
+	line-height: 21px;
+	padding: 3px 0
+}
+
+.post-content li:before {
+	content: '•';
+	position: absolute;
+	top: 3px;
+	left: -25px;
+	width: 25px;
+	padding-right: 5px;
+	text-align: center;
+	height: 21px;
+	line-height: 21px;
+	display: block	
+}
+
+.post-content ul li:before {
+	padding-right: 3px
+}
+
+.post-content ol li:before {
+	text-align: center;
+	counter-increment: olcount;
+	content: counter(olcount) "."
+}
+
+.post-content ol {
+	counter-reset: olcount
+}
+
+
+
+/* =============================================================================
+	Post Content Font Sizes
+   ========================================================================== */
+
+.post-content {
+	font-size: 14px;
+	line-height: 24px
+}
+
+@media (min-width: 992px) {
+	.post-content {
+		font-size: 16px;
+		line-height: 27px
+	}
+} /* end media query */
+
+
+
+/* =============================================================================
+	Post Content Images
+   ========================================================================== */
+
+.alignleft,
+.alignright,
+.aligncenter,
+.aligncenter img,
+.alignleft img,
+.alignright img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 24px
+}
+
+.wp-caption.aligncenter {
+	padding-top: 24px
+}
+
+.wp-caption,
+.wp-caption img {
+	width: auto !important;
+	height: auto !important;
+	max-width: 100%
+}
+
+.wp-caption img {
+	margin-bottom: 9px
+}
+
+.wp-caption-text {
+	margin: 0 auto;
+	line-height: 18px;
+	font-size: 12px;
+	padding-bottom: 9px;
+	border-bottom: 1px dotted @text
+}
+
+
+@media (min-width: 768px) {
+	.alignleft,
+	.wp-caption.alignleft {
+		float: left;
+		margin: 0 24px 24px 0
+	}
+	
+	.alignright,
+	.wp-caption.alignright {
+		float: right;
+		margin: 0 0 24px 24px
+	}
+	
+	.wp-caption-text {
+		clear: both
+	}
+	
+} /* end media query */
+
+
+
+/* =============================================================================
+	Post Content Blockquote
+   ========================================================================== */
+
+blockquote {
+  padding: 12px 20px;
+  margin: 0 0 24px;
+  border-left: 5px solid #eeeeee;
+}
+
+@media (min-width: 768px) {
+	blockquote {
+		margin: 48px 0
+	}
+} /* end media query */
+
+blockquote p:last-child,
+blockquote ul:last-child,
+blockquote ol:last-child {
+  margin-bottom: 0;
+}
+
+blockquote footer,
+blockquote small,
+blockquote .small {
+  display: block;
+  font-size: 13px;
+  line-height: 15px;
+  color: @text;
+}
+
+blockquote footer:before,
+blockquote small:before,
+blockquote .small:before {
+  content: '\2014 \00A0';
+}
+
+.blockquote-reverse {
+  padding-right: 15px;
+  padding-left: 0;
+  border-right: 5px solid #eeeeee;
+  border-left: 0;
+  text-align: right;
+}
+
+.blockquote-reverse footer:before,
+.blockquote-reverse small:before,
+.blockquote-reverse .small:before {
+  content: '';
+}
+
+.blockquote-reverse footer:after,
+.blockquote-reverse small:after,
+.blockquote-reverse .small:after {
+  content: '\00A0 \2014';
+}
+
+
+/* =============================================================================
+	Post Content Big Pullquote
+   ========================================================================== */
+
+.pullquote {
+	margin-top: 36px;
+	margin-bottom: 36px;
+	padding-top: 24px;
+	border-top: 3px solid @textdark;
+	border-bottom: 1px solid @textdark
+}
+
+.pullquote p {
+	font-size: 22px;
+	color: @textdark;
+	line-height: 27px;
+}
+
+.pullquote p:last-child {
+	margin-bottom: 24px
+}
+
+@media (min-width: 768px) {
+	.pullquote {
+		margin-top: 42px;
+		margin-bottom: 42px
+	}
+	
+	.pullquote p {
+		font-size: 27px;
+		line-height: 30px;
+	}
+} /* end media query */
+
+
+/* =============================================================================
+	Buttons
+   ========================================================================== */
+
+.btn {
+	text-decoration:none !important;
+	font-weight:bold;
+	padding:0 30px;
+	line-height:36px;
+	height: auto;
+	display:inline-block;
+	text-align:center;
+	border: 3px solid @blue;
+	color: @blue;
+	text-transform: uppercase;
+	font-size: 10px;
+	.transition(all, .25s, ease);
+	.transitionfix
+}
+
+.btn:hover {
+	border-color: @bluehover;
+	color: @bluehover
+}
+
+.btn.pill{
+	-webkit-border-radius: 19px;
+	-moz-border-radius: 19px;
+	border-radius: 19px;
+}
+
+
+/* =============================================================================
+	Blog
+   ========================================================================== */
+
+.post-tag {
+	background: #ddd;
+	font-size: 10px;
+	color: #fff !important;
+	text-transform: uppercase;
+	padding: 0 6px;
+	margin: 3px 3px 3px 0;
+	float: left
+}
+
+.post-tag:hover {
+
+}
+
+
+/* =============================================================================
+	Subpage Sidebar
+   ========================================================================== */
+   
+.acc-menu {
+	background: @graylite;
+	padding: 24px 30px 0 30px;
+	margin-bottom: 60px
+}
+
+#acc-menu-nav {
+	margin: 0 -30px;
+}
+
+#acc-menu-nav .panel {
+	background: none;
+	margin: 0;
+	padding: 0;
+	border-top: @grayborder 1px solid;
+	.transition(background-color, .2s, ease)
+}
+
+#acc-menu-nav .shown {
+	background: #f9f9f9
+}
+
+.acc-menu-nav-btn {
+	min-height: 60px;
+	line-height: 15px;
+	display: block;
+	width: 100%;
+	font-size: 14px;
+	padding-left: 30px;
+	padding-right: 30px;
+	text-align: left;
+	position: relative;
+}
+
+.acc-menu-nav-btn,
+.acc-menu-nav-btn-text:after {
+	.transition(color, .2s, ease)
+}
+
+.acc-menu-nav-btn-text {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	padding-right: 30px;
+}
+
+.acc-menu-nav-btn-text:after {
+	content: @icon-minus;
+	font-family: 'wtg';
+	font-size: 15px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	color: @text
+}
+
+.collapsed .acc-menu-nav-btn-text:after {
+	content: @icon-plus;
+	color: #888;
+}
+
+.acc-menu-subnav {
+	padding-top: 3px;
+	padding-bottom: 18px
+}
+
+.acc-menu-subnav-li {
+	font-size: 13px;
+	line-height: 15px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+.acc-menu-subnav-link {
+	padding-left: 50px;
+	padding-right: 50px;
+	display: block;
+	color: #888
+}
+
+.acc-menu-subnav-link:hover {
+	color: @green
+}
+   
