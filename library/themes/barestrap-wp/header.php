@@ -12,7 +12,7 @@ try {
 
 $GLOBALS[ 'critical_css' ] = get_field('critical_css', 'option');
 
-$GLOBALS[ 'testing' ] = false; 
+$GLOBALS[ 'testing' ] = true; 
 ?>
 
 <!DOCTYPE HTML>
