@@ -13,10 +13,6 @@
 	font-style: normal;
 }
 
-@import 'less-vars.less';
-@import 'colors.less';
-@import 'fonts.less';
-
 /* =============================================================================
 	Type
    ========================================================================== */
@@ -219,3 +215,53 @@ textarea {
 	box-shadow: none;
 	padding: 10px;
 }
+
+
+
+/* =============================================================================
+	Grid 4-3-2-1
+   ========================================================================== */
+
+.grid-4-3-2-1 {
+	margin: 0 -3px
+}
+
+.grid-4-3-2-1 .item {
+	padding: 3px
+}
+
+@media (min-width: 480px) {
+	.grid-4-3-2-1 .item {
+		float: left
+	}
+} /* end media query */
+
+@media (min-width: 480px) and (max-width: 991px) {
+	.grid-4-3-2-1 .item {
+		width: 50%
+	}
+	
+	.grid-4-3-2-1 .item:nth-child(odd) {
+		clear: both
+	}
+} /* end media query */
+
+@media (min-width: 992px) and (max-width: 1299px) {
+	.grid-4-3-2-1 .item {
+		width: 33.3333%
+	}
+
+	.grid-4-3-2-1 .item:nth-child(3n + 1) {
+		clear: both
+	}
+} /* end media query */
+
+@media (min-width: 1300px) {
+	.grid-4-3-2-1 .item {
+		width: 25%
+	}
+
+	.grid-4-3-2-1 .item:nth-child(4n + 1) {
+		clear: both
+	}
+} /* end media query */

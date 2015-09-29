@@ -13,6 +13,7 @@
 			wp_enqueue_script( 'smartresize', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/jquery.smartresize.js', false, '', true );
 			wp_enqueue_script( 'foundation', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/foundation.min.js', false, '', true );
 			wp_enqueue_script( 'flickity', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/flickity.js', false, '', true );
+			wp_enqueue_script( 'headroom', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/headroom.js', false, '', true );
 			wp_enqueue_script( 'global', get_bloginfo('stylesheet_directory') . '/assets/js/global.js', false, '', true );
 		}
 		

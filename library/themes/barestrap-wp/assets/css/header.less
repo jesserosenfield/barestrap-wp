@@ -2,7 +2,7 @@
 @import 'bootstrap.less';
 @import 'less-vars.less';
 @import 'fonts.less';
-@import 'bootstrap-fold.less';
+@import 'base-fold.less';
 
 
 @headerheight: 60px;
@@ -14,6 +14,28 @@
 #header {
 	position: relative;
 	z-index: 5
+}
+
+.header-fixed #header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	display: block;
+}
+
+.header-fixed {
+	padding-top: @headerheight + 24px
+}
+
+.headroom {
+    .transition(all, .2s, linear)
+}
+.headroom--pinned {
+    .translateY(0%)
+}
+.headroom--unpinned {
+	.translateY(-100%)
 }
 
 .nav-toggle-wrap,
