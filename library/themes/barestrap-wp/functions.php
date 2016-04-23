@@ -15,8 +15,17 @@
 	include_once('assets/functions/acf-templates/acf-banner-slideshow.php');
 	include_once('assets/functions/acf-templates/acf-optimization-options.php');	
 	include_once('assets/functions/acf-templates/acf-flex.php');
+	include_once('assets/functions/acf-templates/acf-post-flex.php');
 	
 	add_image_size('intch_lg', 1600, 700, true);
 	add_image_size('intch_med', 1000, 438, true);
 	add_image_size('intch_sm', 600, 263, true);
+
+	add_image_size('post_slide', 750, 9999, false);
+	add_image_size('post_imgcol', 400, 9999, false);
+	add_image_size('post_twocol', 440, 9999, false);
+
+	add_image_size('post_slide2x', 1500, 9999, false);
+	add_image_size('post_imgcol2x', 800, 9999, false);
+	add_image_size('post_twocol2x', 880, 9999, false);
 ?>

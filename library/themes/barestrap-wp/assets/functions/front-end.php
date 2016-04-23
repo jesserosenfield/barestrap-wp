@@ -11,30 +11,6 @@
 			return $buffer;
 		}	
 	
-		add_filter('img_caption_shortcode', 'my_img_caption_shortcode_filter',10,3);
-		function my_img_caption_shortcode_filter($val, $attr, $content = null)
-		{
-		    extract(shortcode_atts(array(
-		        'id'    => '',
-		        'align' => '',
-		        'width' => '',
-		        'caption' => ''
-		    ), $attr));
-		
-		    if ( 1 > (int) $width || empty($caption) )
-		        return $val;
-		
-		    $capid = '';
-		    if ( $id ) {
-		        $id = esc_attr($id);
-		        $capid = 'id="figcaption_'. $id . '" ';
-		        $id = 'id="' . $id . '" aria-labelledby="figcaption_' . $id . '" ';
-		    }
-		
-		    return '<figure ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >'
-		    . do_shortcode( $content ) . '<figcaption style="max-width: ' . $width . 'px" ' . $capid 
-		    . 'class="wp-caption-text">' . $caption . '</figcaption></figure>';
-		}
 	
 		function slugify($text) { 
 			// replace non letter or digits by -
@@ -93,5 +69,146 @@
 			}
 		}
 
+
+
+
+
+
+
+
+
+
+
+		// POST FUNCTIONS
+		
+		add_action( 'wp_head', 'single_scripts' );
+		
+		function single_scripts() {
+			if( is_single() || ( is_page() && !is_front_page() ) ) {
+				
+				function div_wrapper($content) {
+				    // match any iframes
+				    $pattern = '~<iframe.*</iframe>|<embed.*</embed>~';
+				    preg_match_all($pattern, $content, $matches);
+				
+				    foreach ($matches[0] as $match) {
+				        // wrap matched iframe with div
+				        $wrappedframe = '<div class="video-wrapper">' . $match . '</div>';
+				
+				        //replace original iframe with new in content
+				        $content = str_replace($match, $wrappedframe, $content);
+				    }
+				
+				    return $content;    
+				}
+				
+				add_filter('the_content', 'div_wrapper');
+				
+				
+					// Replace SRC with data-src
+				function add_lazyload($content) {
+					$dom = new DOMDocument();
+					@$dom->loadHTML( mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8') );
+					
+					
+					foreach ($dom->getElementsByTagName('img') as $node) {  
+						$class = $node->getAttribute('class');
+						
+						$oldsrc = $node->getAttribute('src');
+						
+						if(!empty($oldsrc) && $class !== 'post-content-slide-img') {
+							$node->removeAttribute('src');
+							$node->setAttribute("data-src", $oldsrc );				
+						} else {
+							continue;
+						}
+		/*
+						
+						$node->removeAttribute("src");
+						$noscript = $dom->createElement( 'noscript' );
+						
+						$noscriptnode = $node->parentNode->insertBefore($noscript, $node);
+		
+						$newimg = $dom->createElement('IMG');
+						
+						$fallback_image = $noscriptnode->appendChild($newimg);
+						$fallback_image->setAttribute('src', $oldsrc);		
+						$fallback_image->setAttribute('alt', $alt);		
+						$fallback_image->setAttribute('class', $class);	
+		*/				
+					}
+					$newHtml = preg_replace('/^<!DOCTYPE.+?>/', '', str_replace( array('<html>', '</html>', '<body>', '</body>'), array('', '', '', ''), $dom->saveHTML()));
+					return $newHtml;
+				}
+				
+				add_filter('the_content', 'add_lazyload');
+
+				
+				function filter_ptags_on_images($content){
+				   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+				}
+				
+				add_filter('the_content', 'filter_ptags_on_images');
+		
+				add_filter('img_caption_shortcode', 'my_img_caption_shortcode_filter',10,3);
+				function my_img_caption_shortcode_filter($val, $attr, $content = null)
+				{
+				    extract(shortcode_atts(array(
+				        'id'    => '',
+				        'align' => '',
+				        'width' => '',
+				        'caption' => ''
+				    ), $attr));
+				
+				    if ( 1 > (int) $width || empty($caption) )
+				        return $val;
+				
+				    $capid = '';
+				    if ( $id ) {
+				        $id = esc_attr($id);
+				        $capid = 'id="figcaption_'. $id . '" ';
+				        $id = 'id="' . $id . '" aria-labelledby="figcaption_' . $id . '" ';
+				    }
+					
+					//style="max-width: ' . $width . 'px"
+					
+				    return '<figure ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >'
+				    . do_shortcode( $content ) . '<figcaption ' . $capid 
+				    . 'class="wp-caption-text">' . $caption . '</figcaption></figure>';
+				}
+							
+						
+				
+		
+				add_action( 'the_post', function( $post ) {
+				    if ( false !== strpos( $post->post_content, '<!--nextpage-->' ) ) 
+				    {
+				        // Reset the global $pages:
+				        $GLOBALS['pages']     = [ $post->post_content ];
+				
+				        // Reset the global $numpages:
+				        $GLOBALS['numpages']  = 0;
+				
+				       // Reset the global $multipage:
+				        $GLOBALS['multipage'] = false;
+				    }
+				
+				}, 99 );		
+			}		
+		}
+
+
+
+
+
+
+
+
+		
+		function disable_srcset( $sources ) {
+		return false;
+		}
+		add_filter( 'wp_calculate_image_srcset', 'disable_srcset' );
+		
 	}
 ?>

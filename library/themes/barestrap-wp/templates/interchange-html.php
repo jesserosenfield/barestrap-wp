@@ -26,25 +26,28 @@
 		if(!empty($img_sm)) {
 			$ic_imgs[] = "[{$img_sm}, (default)]";
 		} else {
-			$img_sm = wp_get_attachment_image_src( $img_id, 'intch_sm' );
+			$img_sm = wp_get_attachment_image_src( $img_id, 'intch_med' );
 			$ic_imgs[] = "[{$img_sm[0]}, (default)]";
 		}
 	
 		if(!empty($img_med)) {
 			$ic_imgs[] = "[{$img_med}, (medium)]";
 		} else {
-			$img_med = wp_get_attachment_image_src( $img_id, 'intch_med' );
+			$img_med = wp_get_attachment_image_src( $img_id, 'intch_lg' );
 			$ic_imgs[] = "[{$img_med[0]}, (medium)]";		
+			$ic_imgs[] = "[{$img_med[0]}, (retina)]";		
 		}
 	
 		if(!empty($img_lg)) {
 			$ic_imgs[] = "[{$img_lg}, (large)]";
 		} else {
-			$img_lg = wp_get_attachment_image_src( $img_id, 'intch_lg' );
+			$img_lg = wp_get_attachment_image_src( $img_id, 'full' );
 			$ic_imgs[] = "[{$img_lg[0]}, (large)]";		
 		}
 		
-		$intch_html = implode(', ', $ic_imgs);
-		$intch_html = "data-interchange=\"{$intch_html}\"";
+		if(!empty($ic_imgs)) {
+			$intch_html = implode(', ', $ic_imgs);
+			$intch_html = "data-interchange=\"{$intch_html}\"";
+		}
 	endif;
 ?>

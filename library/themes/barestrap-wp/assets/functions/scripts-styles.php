@@ -14,6 +14,13 @@
 			wp_enqueue_script( 'foundation', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/foundation.min.js', false, '', true );
 			wp_enqueue_script( 'flickity', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/flickity.js', false, '', true );
 			wp_enqueue_script( 'headroom', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/headroom.js', false, '', true );
+
+			wp_enqueue_script( 'lazyloadxt', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/lazyloadxt.js', false, '', true );
+
+			wp_enqueue_script( 'cssua', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/cssua.js', false, '', true );
+
+			wp_enqueue_script( 'fancybox', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/fancybox/jquery.fancybox.pack.js', false, '', true );
+
 			wp_enqueue_script( 'global', get_bloginfo('stylesheet_directory') . '/assets/js/global.js', false, '', true );
 		}
 		

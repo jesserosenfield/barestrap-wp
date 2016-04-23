@@ -29,41 +29,44 @@ img {
 
 a {text-decoration: none; color: @link; .transition(color)}
 
-.inner {
-	max-width: 640px;
-	padding: 0 20px;
-	margin: 0 auto;
-	.box-sizing()
+.post-content a {
+	font-weight: bold;
+	border-bottom: 2px solid rgba(161,159,140,.2)
 }
 
-.container-fluid .inner {
-	padding: 0
+.post-content a:hover {
+	border-bottom: 2px solid rgba(161,159,140,.6)
 }
 
-.container-fluid .inner > .col-xs-12 {
-	padding: 0
-}
-
-@media (min-width: 768px) {
-	.inner,
-	.container-fluid .inner {
-		max-width: 1260px;
-		padding: 0 40px
-	}
-	
-	.container-fluid .inner > .col-xs-12 {
-		padding: 0 15px
-	}
+.post-content a.fancybox {
+	border: none
 }
 
 #content {
-	position: relative
+	position: relative;
+	max-width: 1500px;
+	margin: 0 auto;
+	background: #fff;
+	overflow: hidden
+}
+
+.container-fluid {
+	padding: 0 20px
+}
+
+@media (min-width: 768px) {
+	.container-fluid,
+	.bf-slideshow {
+		max-width: 1280px;
+		margin: 0 auto
+	}
 }
 
 
-@media (min-width: 768px) {
-	.container-fluid {
-		max-width: 1110px;
+@media (min-width: 1440px) {
+	.container-fluid,
+	.bf-slideshow {
+		max-width: 1320px;
 		margin: 0 auto
 	}
 }
@@ -111,6 +114,10 @@ a {text-decoration: none; color: @link; .transition(color)}
 .fl {float: left}
 .fr {float: right}
 .center {margin: 0 auto}
+
+.no-border {
+	border: none !important
+}
 
 .abs-full() {
 	position: absolute;
@@ -419,6 +426,26 @@ img.img-fluid {
 	Type
    ========================================================================== */
 
+.bo {font-weight: 600}
+.demi {font-weight: 600}
+.reg {font-weight: 300}
+.med {font-weight: 400}
+.lite {font-weight: 200}
+.xlite {font-weight: 100}
+
+.em {font-style: italic}
+.caps {text-transform: uppercase}
+.lower {text-transform: lowercase}
+.ttn {text-transform: none}
+
+.tac {text-align: center}
+.tar {text-align: right}
+.tal {text-align: left}
+
+.tdn,
+.tdn * {text-decoration: none !important}
+
+.tdu {text-decoration: underline}
 
 .post-content h1,
 .post-content h2,
@@ -699,263 +726,7 @@ img.img-fluid {
 } /* end media query */
 
 
-
-
-/* =============================================================================
-	Post Content
-   ========================================================================== */
-
-.post-content p,
-.post-content ol,
-.post-content ul {
-	margin-bottom: 24px;
-	clear: both
-}
-
-.post-content .alignleft + *,
-.post-content .alignleft + *,
-.post-content .alignleft + * {
-	clear: right
-}
-
-.post-content .alignright + *,
-.post-content .alignright + *,
-.post-content .alignright + * {
-	clear: left
-}
-
-.post-content .alignright + * + *,
-.post-content .alignleft + * + *,
-.post-content .alignright + * + *,
-.post-content .alignleft + * + * {
-	clear: both
-}
-
-.post-content ol,
-.post-content ul {
-	margin-left: 20px;
-	margin-right: 20px
-}
-
-@media (min-width: 768px) {
-	.post-content ol,
-	.post-content ul {
-		margin-left: 0px;
-		margin-right: 0px
-	}
-
-	.post-content p,
-	.post-content ol,
-	.post-content ul {
-		margin-bottom: 30px;
-	}
-} /* end media query */
-
-.post-content li {
-	position: relative;
-	line-height: 21px;
-	padding: 3px 0
-}
-
-.post-content li:before {
-	content: '•';
-	position: absolute;
-	top: 3px;
-	left: -25px;
-	width: 25px;
-	padding-right: 5px;
-	text-align: center;
-	height: 21px;
-	line-height: 21px;
-	display: block	
-}
-
-.post-content ul li:before {
-	padding-right: 3px
-}
-
-.post-content ol li:before {
-	text-align: center;
-	counter-increment: olcount;
-	content: counter(olcount) "."
-}
-
-.post-content ol {
-	counter-reset: olcount
-}
-
-
-
-/* =============================================================================
-	Post Content Font Sizes
-   ========================================================================== */
-
-.post-content {
-	font-size: 14px;
-	line-height: 24px
-}
-
-@media (min-width: 992px) {
-	.post-content {
-		font-size: 16px;
-		line-height: 27px
-	}
-} /* end media query */
-
-
-
-/* =============================================================================
-	Post Content Images
-   ========================================================================== */
-
-.alignleft,
-.alignright,
-.aligncenter,
-.aligncenter img,
-.alignleft img,
-.alignright img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 24px
-}
-
-.wp-caption.aligncenter {
-	padding-top: 24px
-}
-
-.wp-caption,
-.wp-caption img {
-	width: auto !important;
-	height: auto !important;
-	max-width: 100%
-}
-
-.wp-caption img {
-	margin-bottom: 9px
-}
-
-.wp-caption-text {
-	margin: 0 auto;
-	line-height: 18px;
-	font-size: 12px;
-	padding-bottom: 9px;
-	border-bottom: 1px dotted @text
-}
-
-
-@media (min-width: 768px) {
-	.alignleft,
-	.wp-caption.alignleft {
-		float: left;
-		margin: 0 24px 24px 0
-	}
-	
-	.alignright,
-	.wp-caption.alignright {
-		float: right;
-		margin: 0 0 24px 24px
-	}
-	
-	.wp-caption-text {
-		clear: both
-	}
-	
-} /* end media query */
-
-
-
-/* =============================================================================
-	Post Content Blockquote
-   ========================================================================== */
-
-blockquote {
-  padding: 12px 20px;
-  margin: 0 0 24px;
-  border-left: 5px solid #eeeeee;
-}
-
-@media (min-width: 768px) {
-	blockquote {
-		margin: 48px 0
-	}
-} /* end media query */
-
-blockquote p:last-child,
-blockquote ul:last-child,
-blockquote ol:last-child {
-  margin-bottom: 0;
-}
-
-blockquote footer,
-blockquote small,
-blockquote .small {
-  display: block;
-  font-size: 13px;
-  line-height: 15px;
-  color: @text;
-}
-
-blockquote footer:before,
-blockquote small:before,
-blockquote .small:before {
-  content: '\2014 \00A0';
-}
-
-.blockquote-reverse {
-  padding-right: 15px;
-  padding-left: 0;
-  border-right: 5px solid #eeeeee;
-  border-left: 0;
-  text-align: right;
-}
-
-.blockquote-reverse footer:before,
-.blockquote-reverse small:before,
-.blockquote-reverse .small:before {
-  content: '';
-}
-
-.blockquote-reverse footer:after,
-.blockquote-reverse small:after,
-.blockquote-reverse .small:after {
-  content: '\00A0 \2014';
-}
-
-
-/* =============================================================================
-	Post Content Big Pullquote
-   ========================================================================== */
-
-.pullquote {
-	margin-top: 36px;
-	margin-bottom: 36px;
-	padding-top: 24px;
-	border-top: 3px solid @textdark;
-	border-bottom: 1px solid @textdark
-}
-
-.pullquote p {
-	font-size: 22px;
-	color: @textdark;
-	line-height: 27px;
-}
-
-.pullquote p:last-child {
-	margin-bottom: 24px
-}
-
-@media (min-width: 768px) {
-	.pullquote {
-		margin-top: 42px;
-		margin-bottom: 42px
-	}
-	
-	.pullquote p {
-		font-size: 27px;
-		line-height: 30px;
-	}
-} /* end media query */
+@import 'post-content-default.less';
 
 
 /* =============================================================================
