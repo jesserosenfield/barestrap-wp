@@ -3,6 +3,10 @@
    ========================================================================== */
    
 @spacer: 12px;
+@bodylineheight: 24px;
+@bodyfontsize: 16px;
+@iconfont: 'me';
+@bodyfont: '"Helvetica Neue", arial, helvetica, sans-serif';
 
 .border-radius (@radius: 5px) {
 	-wekit-border-radius: @radius;
@@ -93,7 +97,13 @@
 	transform: translateY(@size);
 }
 
-
+.translateX(@size) {
+	-moz-transform: translateX(@size);
+	-webkit-transform: translateX(@size);
+	-o-transform: translateX(@size);
+	-ms-transform: translateX(@size);
+	transform: translateX(@size);
+}
 
 /* =============================================================================
 	Colors

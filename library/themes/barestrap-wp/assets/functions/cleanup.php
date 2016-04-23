@@ -1,13 +1,21 @@
-<?php 
+<?php
 	// HEADER STUFF
 	function my_filter_head() {
 		remove_action('wp_head', '_admin_bar_bump_cb');
 	}
+
+	function unhook_parent_style() {
 	
-	function remove_twentytwelve_styles() {
-		wp_dequeue_style( 'twentytwelve-style' );
-		wp_dequeue_style( 'twentytwelve-ie' );
-		wp_dequeue_style( 'twentytwelve-fonts' );
+	  wp_dequeue_style( 'twentyfifteen-style' );
+	  wp_deregister_style( 'twentyfifteen-style' );
+	
+	}
+	add_action( 'wp_enqueue_scripts', 'unhook_parent_style', 20 );
+
+	function remove_twentyfifteen_styles() {
+		wp_dequeue_style( 'twentyfifteen-ie' );
+		wp_dequeue_style( 'twentyfifteen-fonts' );
+		wp_dequeue_style( 'genericons' );
 	}
 
 	function my_remove_recent_comments_style() {
@@ -15,7 +23,7 @@
 		remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'  ) );
 	}
 	
-	function twentytwelvechild_remove_custom_header() {
+	function twentyfifteenchild_remove_custom_header() {
 		remove_theme_support( 'custom-header' );
 		remove_theme_support( 'custom-background' );
 	}
@@ -34,8 +42,8 @@
 		remove_action( 'wp_head', 'wp_generator' );
 	
 		add_action('get_header', 'my_filter_head');
-		add_action( 'wp_print_styles', 'remove_twentytwelve_styles' );
-		add_action( 'after_setup_theme', 'twentytwelvechild_remove_custom_header', 11 );
+		add_action( 'wp_print_styles', 'remove_twentyfifteen_styles' );
+		add_action( 'after_setup_theme', 'twentyfifteenchild_remove_custom_header', 11 );
 		add_action( 'widgets_init', 'my_remove_recent_comments_style' );
 
 		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );

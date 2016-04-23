@@ -37,7 +37,22 @@
 					<strong>Facebook Link</strong><br/>
 					<input type="text" name="facebook_link" size="45" value="<?php echo get_option('facebook_link'); ?>" />
 				</p>
-	
+
+				<p>
+					<strong>Instagram Link</strong><br/>
+					<input type="text" name="instagram_link" size="45" value="<?php echo get_option('instagram_link'); ?>" />
+				</p>
+
+				<p>
+					<strong>Pinterest Link</strong><br/>
+					<input type="text" name="pinterest_link" size="45" value="<?php echo get_option('pinterest_link'); ?>" />
+				</p>
+
+				<p>
+					<strong>Youtube Link</strong><br/>
+					<input type="text" name="youtube_link" size="45" value="<?php echo get_option('youtube_link'); ?>" />
+				</p>
+													
 				<p>
 					<strong>Soundcloud Link</strong><br/>
 					<input type="text" name="soundcloud_link" size="45" value="<?php echo get_option('soundcloud_link'); ?>" />
@@ -55,7 +70,7 @@
 												
 				<p><input class="button action" type="submit" name="Submit" value="Save Settings" /></p>
 				<input type="hidden" name="action" value="update" />
-				<input type="hidden" name="page_options" value="google_link,linkedin_link,twitter_link,facebook_link,soundcloud_link,site_phone,site_email" />
+				<input type="hidden" name="page_options" value="google_link,linkedin_link,twitter_link,facebook_link,instagram_link,pinterest_link,youtube_link,soundcloud_link,site_phone,site_email" />
 			</form>
 		</div>
 		

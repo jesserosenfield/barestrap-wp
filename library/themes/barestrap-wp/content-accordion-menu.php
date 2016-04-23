@@ -1,5 +1,4 @@
 <nav>
-								
 	<?php 
 		$menu = wp_nav_menu(array(
 			'menu' => 'Sub Menu',

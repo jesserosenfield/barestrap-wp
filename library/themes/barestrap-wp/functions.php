@@ -8,6 +8,8 @@
 	include_once('assets/functions/front-end.php');
 	include_once('assets/functions/shortcodes.php');
 	include_once('assets/functions/scripts-styles.php');
+
+	include_once('assets/functions/twitter.php');
  	
 	include_once('assets/functions/theme-options.php');	
 	include_once('assets/functions/acf-templates/acf-banner-slideshow.php');

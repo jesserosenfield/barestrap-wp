@@ -1,9 +1,9 @@
 <?php 
 get_header();
+global $paged;
+$blogid = get_option( 'page_for_posts' );
 ?>
 
-	<?php single_cat_title( 'Category: ', true ); ?>
-
-	<?php get_template_part('content', 'loop'); ?>
+	<?php get_template_part('content', 'blog'); ?>
 
 <?php get_footer(); ?>

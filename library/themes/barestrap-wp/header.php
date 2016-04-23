@@ -26,7 +26,13 @@ $GLOBALS[ 'testing' ] = true;
 		<title><?php wp_title(' – ', true, 'right'); ?></title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+ 		
+ 		<script src="<?php bloginfo('stylesheet_directory'); ?>/assets/js/plugins/loadCSS.js"></script>
 
+		<script id="loadcss">
+		  loadCSS( "<?php bloginfo('stylesheet_directory'); ?>/assets/css/font-face.css" );
+		</script>
+		<noscript><link href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/font-face.css" rel="stylesheet"></noscript>
 		
 		<?php if($GLOBALS[ 'critical_css' ]) { ?>
 			<style><?php include('assets/css/header-inline.php'); ?></style>
@@ -35,12 +41,18 @@ $GLOBALS[ 'testing' ] = true;
 		<?php } elseif($GLOBALS[ 'testing' ] == true) { ?>
 			<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/<?php echo $themename; ?>.css" />
 		<?php } ?>
-		
+
 		<!--[if lt IE 9]>
 			<script src="<?php bloginfo('stylesheet_directory'); ?>/assets/js/plugins/html5shiv.js"></script>
 			<script src="<?php bloginfo('stylesheet_directory'); ?>/assets/js/plugins/respond.js"></script>
 		<![endif]-->
+
+		<script>
+			var siteurl = '<?php bloginfo('wpurl'); ?>';
+		</script>
 		
+		<link rel="icon" type="image/png" href="<?php bloginfo('wpurl'); ?>/favicon.png" />
+
 		<?php
 			wp_deregister_script('jquery');
 			wp_head();

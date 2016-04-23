@@ -22,6 +22,7 @@
 			
 			// depth dependent classes
 			$depth_classes = array(
+				'resp-header-menu-li',
 			    ( $depth == 0 ? 'main-menu-item' : 'sub-menu-item' ),
 			    ( $depth >=2 ? 'sub-sub-menu-item' : '' ),
 			    ( $depth % 2 ? 'menu-item-odd' : 'menu-item-even' ),
@@ -62,12 +63,4 @@
 		}         	
 		
 	}
-	
-	
-	function add_classes_wpse_130358($classes) {
-		$classes[] = 'resp-header-menu-li';
-		return $classes;
-	}
-	
-	add_filter('nav_menu_css_class','add_classes_wpse_130358',1,1);
 ?>

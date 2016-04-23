@@ -1,23 +1,9 @@
 <?php 
-/*
-Template Name: Lorem Ipsum
-*/
 get_header();
+global $paged;
+$blogid = get_option( 'page_for_posts' );
 ?>
 
-	<div class="inner container-fluid post-content">
-		<div class="row">
-			<div class="col-xs-12">
-				<h1><?php the_title(); ?></h1>
-				
-				<?php
-					if ( have_posts() ) : while ( have_posts() ) : the_post();
-				?>
-					<?php the_content(); ?>
-					
-				<?php endwhile; endif; ?>
-			</div>
-		</div>
-	</div>
-	
+	<?php get_template_part('content', 'blog'); ?>
+
 <?php get_footer(); ?>

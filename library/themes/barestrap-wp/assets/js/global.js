@@ -18,6 +18,8 @@ $(document).ready(function(){
 		}, 350);
 		
 	});
+	
+	$('a:not([href^="' + homeurl + '"]):not([href^="#"]):not([href^="/"])').attr('target', '_blank');
 
 });
 

@@ -39,4 +39,10 @@
 	}
 	
 	add_action( 'after_setup_theme', 'barestrap_setup' );
+
+function tfc_remove_page_templates( $templates ) {
+    unset( $templates['page-templates/contributors.php'] );
+    return $templates;
+}
+add_filter( 'theme_page_templates', 'tfc_remove_page_templates' );
 ?>

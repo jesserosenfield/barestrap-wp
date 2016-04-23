@@ -1,6 +1,15 @@
-<form action="/" method="get" class="search-form inline-block pr">
-	<input type="text" name="s" id="search" placeholder="Search" class="search-input form-control inline-block" value="<?php the_search_query(); ?>" />
-	<button type="submit" class="search-submit icon-search inline-block search-submit-inside">
+
+	<form action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	
-	</button>
-</form>
+		<div class="table table-mob">
+			<div class="table-cell">
+				<input type="text" id="s" value="<?php the_search_query(); ?>" name="s" data-swplive="true" class="search-input m0 bg-white form-control" placeholder="Search." />
+			
+			</div>
+			
+			<div class="table-cell">
+				<button class="m0 search-btn icon-search" type="submit"></button>									
+			</div>
+		</div>
+	
+	</form>
