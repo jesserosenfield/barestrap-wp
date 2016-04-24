@@ -1,6 +1,18 @@
 <?php
 	if(!is_admin()) {
 		function bf_scripts() {
+
+			add_action( 'wp_enqueue_scripts', 'remove_scripts', 100 );
+
+			function remove_scripts() {
+				wp_dequeue_script( 'jquery-ui-core' );
+				wp_dequeue_script( 'jquery-ui-datepicker' ); 
+				wp_dequeue_script( 'twentyfifteen-script' ); 
+				wp_deregister_script( 'twentyfifteen-script' ); 
+				wp_dequeue_script( 'twentyfifteen-skip-link-focus-fix' );			
+				wp_deregister_script( 'twentyfifteen-skip-link-focus-fix' );			
+			}
+			
 			// wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
 			
 			// HEADER SCRIPTS

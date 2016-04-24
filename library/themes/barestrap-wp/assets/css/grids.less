@@ -1,0 +1,151 @@
+/* =============================================================================
+	Grid 4-2-1
+   ========================================================================== */
+
+.grid-4-3-2-1 .item,
+.grid-3-2-1 .item {
+	padding: 0 15px;
+	margin-bottom: 15px
+}
+
+@media (min-width: 480px) {
+	.grid-4-3-2-1 .item,
+	.grid-3-2-1 .item {
+		float: left;
+		margin-bottom: 12px
+	}
+} /* end media query */
+
+@media (min-width: 480px) and (max-width: 767px) {
+	.grid-4-3-2-1,
+	.grid-3-2-1 {
+		//padding: 0 10px
+	}
+	
+	.grid-4-3-2-1 .item,
+	.grid-3-2-1 .item {
+		width: 50%;
+		padding: 0 6px
+	}
+	
+	.grid-4-3-2-1 .item:nth-child(odd) {
+		clear: both
+	}
+} /* end media query */
+
+@media (min-width: 768px) and (max-width: 991px) {	
+	.grid-4-3-2-1 .item,
+	.grid-3-2-1 .item {
+		width: 33.3333%;
+		padding: 0 9px;
+		margin-bottom: 18px
+	}
+
+	.grid-4-3-2-1 .item:nth-child(3n + 1) {
+		clear: both
+	}
+} /* end media query */
+
+@media (min-width: 768px) and (max-width: 940px) {
+	.grid-3-2-1 .item {
+		width: 50%;
+		padding: 0 6px;
+		margin-bottom: 12px
+	}
+}
+
+@media (min-width: 992px) {
+	.grid-4-3-2-1,
+	.grid-3-2-1 {
+		// padding: 0 20px
+	}
+	
+	.grid-4-3-2-1 .item,
+	.grid-3-2-1 .item {
+		width: 25%;
+		margin-bottom: 30px;
+		padding: 0 9px;
+		margin-bottom: 20px
+	}
+
+	.grid-3-2-1 .item {
+		width: 33.33%
+	}
+
+	.grid-4-3-2-1 .item:nth-child(4n + 1) {
+		clear: both
+	}
+} /* end media query */
+
+@media (min-width: 1100px) {
+	.grid-4-3-2-1 .item,
+	.grid-3-2-1 .item {
+		padding: 0 15px;
+		margin-bottom: 30px
+	}
+} /* end media query */
+
+
+
+
+
+
+/* =============================================================================
+	Text/Image Two Column Layout
+   ========================================================================== */
+
+.two-col .tal,
+.two-col .tar {
+	text-align: center
+}
+
+.two-col .rtl {
+	direction: rtl;
+	text-align: left
+}
+
+.two-col .rtl .table-cell * {
+	direction: ltr
+}
+
+
+.two-col .table {
+	table-layout: fixed;
+}
+
+.two-col .table > .table-cell {
+	width: 100%;
+	display: block;
+	padding: 0 15px
+}
+
+.two-col .table > .table-cell:first-child {
+	margin-bottom: 36px;
+}
+
+@media (min-width: 1024px) {
+	.two-col {
+		margin: 0 -15px 0 -15px
+	}
+
+
+	.two-col img {
+		max-width: 100%;
+	}
+		
+	.two-col .table > .table-cell {
+		width: 50%;
+		display: table-cell;
+		padding: 0 45px;
+		margin-bottom: 0
+	}
+
+	
+	.two-col .tal {
+		text-align: left
+	}
+
+	.two-col .tal {
+		text-align: right
+	}
+} /* end media query */

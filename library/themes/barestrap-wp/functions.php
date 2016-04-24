@@ -8,6 +8,7 @@
 	include_once('assets/functions/front-end.php');
 	include_once('assets/functions/shortcodes.php');
 	include_once('assets/functions/scripts-styles.php');
+	include_once('assets/functions/admin-functions.php');
 
 	include_once('assets/functions/twitter.php');
  	

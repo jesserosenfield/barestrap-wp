@@ -1,5 +1,6 @@
 <?php
 	if(!is_admin()) {
+
 		function squeezeme($buffer) {	
 			// Remove comments
 			$buffer = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $buffer);
@@ -69,9 +70,57 @@
 			}
 		}
 
+		function is_the_blog() {
+			if(is_home() || is_tag() || is_date() || is_category() || is_search() || is_author()) {
+				return true;
+			}
+		}
 
-
-
+		add_action('wp_head', 'body_classes');
+		
+		function body_classes() {
+			global $post;
+			
+			function in_array_r($needle, $haystack, $strict = false) {
+			    foreach ($haystack as $item) {
+			        if (($strict ? $item === $needle : $item == $needle) || (is_array($item) && in_array_r($needle, $item, $strict))) {
+			            return true;
+			        }
+			    }
+			
+			    return false;
+			}
+			
+			
+			// Add specific CSS class by filter
+			add_filter( 'body_class', 'my_class_names' );
+			function my_class_names( $classes ) {
+				global $post;
+				$postid = $post->ID;
+				$postflex = get_field('post_fl', $postid);
+			
+				if(!empty($postflex)) {
+					$in_array = in_array_r('three_column', $postflex, $strict = true);
+					
+					if($in_array == true) {
+						// add 'class-name' to the $classes array
+						$classes[] = 'three-column';
+						// return the $classes array
+					} else {
+						$classes[] = 'no-three-column';
+					}
+				}
+				
+				if( is_the_blog() ) {
+					// add 'class-name' to the $classes array
+					$classes[] = 'the-blog';
+					// return the $classes array
+				}
+				
+				return $classes;
+			}
+		
+		}
 
 
 
