@@ -2,11 +2,11 @@
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /barestrap-wp/
+RewriteBase /handistrap-wp/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /barestrap-wp/index.php [L]
+RewriteRule . /handistrap-wp/index.php [L]
 </IfModule>
 
 # END WordPress

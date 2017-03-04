@@ -1,0 +1,385 @@
+.ajax-fade {
+	.transition(opacity, .4s);
+	-webkit-backface-visibility: hidden
+}
+
+#switcheroo {
+	position: relative;
+	z-index: 2
+}	
+
+.loading-switch .ajax-fade,
+.loading-out .ajax-fade {.opacity(0)}
+
+.search-submit-inside.search-form {
+	width: 150px;
+}
+
+.search-submit-inside.search-form .search-input {
+	padding-left: 35px
+}
+
+.search-submit {
+	height: 34px;
+	width: 30px
+}
+
+.search-submit-inside .search-submit {
+	position: absolute;
+	left: 1px
+}
+
+
+/* =============================================================================
+	Accordion Reset
+   ========================================================================== */
+
+.internal-accordion .panel,
+.internal-accordion .panel-body {
+	margin-top: 1px !important;
+	.box-shadow(0,0,0,0);
+	.border-radius(0);
+	border: none !important
+}
+
+.internal-accordion .panel-heading {
+	background: none;
+	padding: 0
+}
+
+.internal-accordion .panel-title a {
+	display: block;
+	outline: none;
+}
+
+
+
+/* =============================================================================
+	Flickity
+   ========================================================================== */
+
+.gallery-cell {
+	width: 100%;
+	top: 0;
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.gallery-cell:active {
+	cursor: grabbing !important;
+	cursor: -webkit-grabbing !important;
+	cursor: -moz-grabbing !important;
+}
+
+.flickity-viewport {
+	position: relative;
+	overflow: hidden
+}
+
+
+
+/* =============================================================================
+	Modal Center
+   ========================================================================== */
+
+.modal-center {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) { 
+  .modal-center:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+.modal-dialog-center {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+@media (min-width: 900px) {
+	.modal-dialog-center {
+		width: 800px
+	}
+} /* end media query */
+
+.modal-flat .modal-content {
+	background: none;
+	.border-radius(0);
+	.box-shadow(0,0,0,rgba(0,0,0,0))
+}
+
+
+
+
+
+
+/* =============================================================================
+	Blog
+   ========================================================================== */
+
+.post-preview {
+	margin-bottom: 54px
+}
+
+.post-tag {
+	background: #ddd;
+	font-size: 10px;
+	color: #fff !important;
+	text-transform: uppercase;
+	padding: 0 6px;
+	margin: 3px 3px 3px 0;
+	float: left
+}
+
+.post-tag:hover {
+
+}
+
+.search-btn {
+	text-align: center;
+	height: 34px;
+	line-height: 34px;
+	width: 34px
+}
+
+.search-input {
+	.round-corner-tr(0);
+	.round-corner-br(0)
+}
+
+.somed-btns {
+	vertical-align: middle
+}
+
+.somed-btns > * {
+	display: inline-block;
+	margin: 0 5px
+}
+
+.fb-share-button,
+.pinterest-btn {
+	height: 20px;
+	position: relative;
+	top: -2px
+}
+
+.gplus {
+	height: 24px
+}
+
+.gplus > div {
+	width: 80px !important
+}
+
+.fb-share-button > span,
+.pinterest-btn img {
+	vertical-align: top !important
+}
+
+.gplus-btn {
+	width: 80px !important
+}
+
+
+
+/* =============================================================================
+	Blog Pagination
+   ========================================================================== */
+   
+@pageheight: 36px;
+
+ul.pagination {
+    display: block;
+    margin-left: 10px;
+    min-height: @pageheight;
+    margin-bottom: 60px
+}
+
+ul.pagination li {
+    color: #222222;
+    margin-left: 10px;
+}
+
+ul.pagination li,
+ul.pagination li a,
+ul.pagination li button {
+    line-height: 36px;
+    height: 36px;
+}
+
+ul.pagination li a,
+ul.pagination li button {
+    border-radius: 3px;
+    transition: background-color 300ms ease-out;
+    background: none;
+    color: #999999;
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: inherit;
+    padding: 2px 12px 0px
+}
+
+ul.pagination li:hover a,
+ul.pagination li a:focus,
+ul.pagination li:hover button,
+ul.pagination li button:focus {
+    background: #d0d0d0;
+    text-decoration: none !important
+}
+
+ul.pagination li.unavailable a,
+ul.pagination li.unavailable button {
+    cursor: default;
+    color: #999999;
+    pointer-events: none;
+}
+
+ul.pagination li.unavailable:hover a,
+ul.pagination li.unavailable a:focus,
+ul.pagination li.unavailable:hover button,
+ul.pagination li.unavailable button:focus {
+    background: transparent;
+}
+
+ul.pagination li.current a,
+ul.pagination li.current button {
+    background: @purp;
+    color: #FFFFFF;
+    cursor: default;
+}
+
+ul.pagination li.current a:hover,
+ul.pagination li.current a:focus,
+ul.pagination li.current button:hover,
+ul.pagination li.current button:focus {
+    background: @purp;
+}
+
+ul.pagination li {
+    display: block;
+    float: left;
+}
+
+.pagination .next,
+.pagination .prev {
+	padding-top: 0
+}
+
+.pagination .next:before,
+.pagination .prev:before {
+	font-family: @iconfont;
+	content: @icon-chevron-left
+}
+
+.pagination .next:before {
+	content: @icon-chevron-right
+}
+/* Pagination centred wrapper */
+
+.pagination-centered {
+    text-align: center;
+}
+
+.pagination-centered ul.pagination li {
+    display: inline-block;
+    float: none;
+    vertical-align: top
+}
+
+
+/* =============================================================================
+	Subpage Sidebar
+   ========================================================================== */
+   
+.acc-menu {
+	background: @graylite;
+	padding: 24px 30px 0 30px;
+	margin-bottom: 60px
+}
+
+#acc-menu-nav {
+	margin: 0 -30px;
+}
+
+#acc-menu-nav .panel {
+	background: none;
+	margin: 0;
+	padding: 0;
+	border-top: @grayborder 1px solid;
+	.transition(background-color, .2s, ease)
+}
+
+#acc-menu-nav .shown {
+	background: #f9f9f9
+}
+
+.acc-menu-nav-btn {
+	min-height: 60px;
+	line-height: 15px;
+	display: block;
+	width: 100%;
+	font-size: 14px;
+	padding-left: 30px;
+	padding-right: 30px;
+	text-align: left;
+	position: relative;
+}
+
+.acc-menu-nav-btn,
+.acc-menu-nav-btn-text:after {
+	.transition(color, .2s, ease)
+}
+
+.acc-menu-nav-btn-text {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	padding-right: 30px;
+}
+
+.acc-menu-nav-btn-text:after {
+	content: @icon-minus;
+	font-family: 'wtg';
+	font-size: 15px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	color: @text
+}
+
+.collapsed .acc-menu-nav-btn-text:after {
+	content: @icon-plus;
+	color: #888;
+}
+
+.acc-menu-subnav {
+	padding-top: 3px;
+	padding-bottom: 18px
+}
+
+.acc-menu-subnav-li {
+	font-size: 13px;
+	line-height: 15px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+.acc-menu-subnav-link {
+	padding-left: 50px;
+	padding-right: 50px;
+	display: block;
+	color: #888
+}
+
+.acc-menu-subnav-link:hover {
+	color: @green
+}
+   

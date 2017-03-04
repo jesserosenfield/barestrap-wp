@@ -73,16 +73,18 @@ define('WPLANG', '');
 
 define('WPLANG', '');
 
-$base_url = 'http://localhost:8888/barestrap-wp/';
+$base_url = 'http://localhost:8888/handistrap-wp/';
 
 define('WP_HOME', $base_url);
 define('WP_SITEURL', $base_url);
 
+/*
 define('WP_CONTENT_FOLDERNAME', 'library');
 define('WP_CONTENT_DIR', ABSPATH . WP_CONTENT_FOLDERNAME );
 define('WP_CONTENT_URL', $base_url .WP_CONTENT_FOLDERNAME);
 define('WP_PLUGIN_DIR', WP_CONTENT_DIR .'/plugins' );
 define('WP_PLUGIN_URL', WP_CONTENT_URL.'/plugins');
+*/
 
 /**
  * For developers: WordPress debugging mode.
@@ -92,6 +94,8 @@ define('WP_PLUGIN_URL', WP_CONTENT_URL.'/plugins');
  * in their development environments.
  */
 define('WP_DEBUG', false);
+
+define('AUTOPTIMIZE_CACHE_CHILD_DIR','/uploads/cache/autoptimize/');
 
 /* That's all, stop editing! Happy blogging. */
 
