@@ -40,6 +40,9 @@ jQuery.fn.extend({
 });
 
 (function($) {
+	$.extend($.lazyLoadXT, {
+	  edgeY:  1000,
+	});
 	
 	$(document).ready(function(){
 		//! Toggle Menu Item Class

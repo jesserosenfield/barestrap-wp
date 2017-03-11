@@ -71,11 +71,11 @@ if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array (
 	'key' => 'group_57ee90bc29019',
-	'title' => 'Header Logo',
+	'title' => 'Logos',
 	'fields' => array (
 		array (
 			'key' => 'field_57ee90c2f9450',
-			'label' => 'Logo Image',
+			'label' => 'Header Logo Image',
 			'name' => 'logo_img',
 			'type' => 'image',
 			'instructions' => '',
@@ -99,7 +99,7 @@ acf_add_local_field_group(array (
 		),
 		array (
 			'key' => 'field_57ee90cff9451',
-			'label' => 'Logo Image Alternate',
+			'label' => 'Header Logo Image Alternate',
 			'name' => 'logo_img_alt',
 			'type' => 'image',
 			'instructions' => '',
@@ -121,7 +121,31 @@ acf_add_local_field_group(array (
 			'max_size' => '',
 			'mime_types' => '',
 		),
-	),
+		array (
+			'key' => 'field_7nnjs57a1220o',
+			'label' => 'Favicon (200 x 200px ... additional size will generate automatically)',
+			'name' => 'favicon',
+			'type' => 'image',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'array',
+			'preview_size' => 'thumbnail',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+	),	
 	'location' => array (
 		array (
 			array (

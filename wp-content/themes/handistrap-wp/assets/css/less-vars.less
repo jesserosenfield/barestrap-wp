@@ -153,6 +153,13 @@
 	box-shadow: @x @y @blur @color;
 }
 
+
+.box-shadow-inset(@x: 0, @y: 0, @blur: 15px, @color: rgba(0,0,0,.1)) {
+	-moz-box-shadow: inset @x @y @blur @color;
+	-webkit-box-shadow: inset @x @y @blur @color;
+	box-shadow: inset @x @y @blur @color;
+}
+
 .box-sizing(@model: border-box) {
 	box-sizing: @model;
 	-moz-box-sizing: @model;

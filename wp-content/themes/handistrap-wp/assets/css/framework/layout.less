@@ -262,7 +262,7 @@ img.img-fluid {
         &.pl@{i}h@{prefix} {padding-left: @i * 1.5 * @hspacer !important}
         &.pr@{i}h@{prefix} {padding-right: @i * 1.5 * @hspacer !important}
         
-        &.mbh@{i}-n@{prefix} {margin-bottom: -@i * @spacer !important}
+        &.mb@{i}-n@{prefix} {margin-bottom: -@i * @spacer !important}
         &.mt@{i}-n@{prefix} {margin-top: -@i * @spacer !important}
         &.pb@{i}-n@{prefix} {padding-bottom: -@i * @spacer !important}
         &.pt@{i}-n@{prefix} {padding-top: -@i * @spacer !important}
@@ -394,7 +394,9 @@ img.img-fluid {
 }
 
 .bg-item {
+	background-position: center center;
 	background-size: cover;
+	background-repeat: no-repeat !important;
 	position: absolute;
 	width: 101%;
 	height: 101%;

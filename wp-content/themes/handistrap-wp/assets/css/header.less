@@ -404,7 +404,7 @@ meta.foundation-data-attribute-namespace {
 	position: relative
 }
 
-.bf-slide-wrap:after {
+.bf-slide-bg:after {
 	content: '';
 	.abs-full();
 	background: #000;
@@ -413,7 +413,8 @@ meta.foundation-data-attribute-namespace {
 }
 
 .bf-slide-bg {
-	position: absolute
+	position: absolute;
+	z-index: 0
 }
 
 .bf-slide-wrap,
@@ -424,6 +425,10 @@ meta.foundation-data-attribute-namespace {
 .vh100 .bf-slide-wrap,
 .vh100 .bf-slide-wrap > .table {
 	height: auto
+}
+
+.bf-slide-text-wrap {
+	z-index: 10
 }
 
 .vh100 .bf-slide-text-wrap {

@@ -30,7 +30,7 @@
 
 			wp_enqueue_script( 'cssua', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/cssua.js', false, '', true );
 
-			wp_enqueue_script( 'fancybox', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/fancybox/jquery.fancybox.pack.js', false, '', true );
+			wp_enqueue_script( 'fancybox', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/jquery.fancybox.js', false, '', true );
 
 			wp_enqueue_script( 'global', get_bloginfo('stylesheet_directory') . '/assets/js/global.js', false, '', true );
 		}

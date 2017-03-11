@@ -1,4 +1,10 @@
 <?php
+	function getYtIDfromURL($url) {
+		$url = preg_replace("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i","$1",$url);
+		
+		return $url;
+	}
+	
 	function hex2rgb($hex) {
 	   $hex = str_replace("#", "", $hex);
 	
