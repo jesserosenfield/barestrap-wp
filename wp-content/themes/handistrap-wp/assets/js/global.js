@@ -18,27 +18,65 @@ var debounce = function (func, threshold, execAsap) {
   };
 }
 
-jQuery.fn.extend({
-	hwFadeIn: function() {
-		var $me = $(this);
-		
-		$me.addClass('hw-fade--workin');
-		
-		setTimeout(function(){
-			$me.addClass('hw-fade--in');
-		}, 10);
-	},
-	hwFadeOut: function() {
-		var $me = $(this);
-		
-		$me.removeClass('hw-fade--in');
+	jQuery.fn.extend({
+		hwFadeIn: function(inlineblock, callback, beforeCallback, slide) {
+			var $me = jQuery(this);
+			$me.removeAttr('style');
+			
+			$me.removeClass('hw-fade--slide-up');
 
-		setTimeout(function(){
-			$me.removeClass('hw-fade--workin');
-		}, 400);
-	}
-});
+			if(inlineblock == true) {
+				$me.addClass('hw-fade--workin inline-block');
+			} else {
+				$me.addClass('hw-fade--workin');		
+			}
 
+			setTimeout(function(){
+				$me.addClass('hw-fade--in');
+				if(typeof callback !== 'undefined' && callback !== null) {
+					callback();
+				}
+			}, 100);
+		},
+		hwFadeOut: function(callback, slide) {
+			var $me = jQuery(this),
+				timeout,
+				myCallback = function(){
+					$me.removeClass('hw-fade--workin inline-block');
+		
+					if(typeof callback !== 'undefined' && callback !== null) {
+						callback();
+					}
+				};
+			
+			$me.not('.hw-fade--workin').addClass('hw-fade--workin');
+			
+			$me.removeClass('hw-fade--in');
+			
+			if(typeof slide == 'undefined' || slide == false) {
+				timeout = myCallback;
+			} else if(slide == true) {
+				timeout = function(){
+					$me.css({
+						height: $me.height()
+					});
+					
+					function finishHim() {
+						setTimeout(myCallback, 400);
+					}
+					
+					setTimeout(function(){
+						$me.addClass('hw-fade--slide-up');
+						
+						finishHim();
+					}, 50);
+				};
+			}
+
+			setTimeout(timeout, 400);
+		}
+	});
+	
 (function($) {
 	$.extend($.lazyLoadXT, {
 	  edgeY:  1000,

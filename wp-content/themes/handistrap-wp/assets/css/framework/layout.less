@@ -27,6 +27,26 @@
 	display: none
 }
 
+[class*="flex-wrap"] {
+	justify-content: center;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;	
+
+	.flex-item {
+		align-items: stretch;
+		float: none !important;
+		
+		& > * {
+			-ms-flex-direction: column;
+			flex-direction: column;
+			max-width: 100%
+		}
+	}
+}
+
+
+=======
 [class^="op0"] {
 	pointer-events: none
 }
@@ -70,18 +90,13 @@
 		display: -webkit-flex;
 		display: -ms-flexbox;
 		display: flex;
-		justify-content: center;
-		-webkit-flex-wrap: wrap;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;	
 	}
 	
 	.flex-wrap@{prefix} .flex-item {
 		display: -webkit-flex !important;
 		display: -ms-flexbox !important;
 		display: flex !important;
-		align-items: stretch;
-		float: none !important;
+
 		-webkit-flex: 1 0 auto;          /* Chrome */
 		-ms-flex: 1 0 auto;             /* IE 10 */
 		flex: 1 0 auto;   
@@ -188,11 +203,20 @@ img.img-fluid {
 	display:block
 }
 
+<<<<<<< HEAD
 .bg-cover, .bg-cover .bg-item {background-size: cover !important}
 .bg-contain, bg-contain .bg-item {background-size: contain !important}
 .bg-center, .bg-center .bg-item {background-size: 75% auto !important}
 .bg-pos-center, .bg-center .bg-item {background-position: center center}
 .bg-height100, .bg-height100 .bg-item {background-size: auto 100%}
+=======
+.bg-cover {background-size: cover !important}
+.bg-contain {background-size: contain !important}
+
+.bg-center {background-size: 75% auto !important}
+.bg-pos-center {background-position: center center}
+.bg-height100 {background-size: auto 100%}
+>>>>>>> 4b0543a957d0ed2784ac5c75785836acd1a645f0
 
 .bg-cover,
 .bg-contain,
@@ -536,4 +560,46 @@ img.img-fluid {
 .active .jump-flex-link:before {
 	left: 0;
 	.opacity(1)
+}
+
+
+
+
+
+
+
+
+
+
+/* =============================================================================
+	Fade In/Out
+   ========================================================================== */
+
+.hw-fade--workin {
+	display: block !important;
+	z-index: 2 !important;
+	pointer-events: none;
+	.opacity(0);
+	.transition(opacity, .3s)
+}
+
+.hw-fade--in {
+	pointer-events: auto;
+	.opacity(1, ~'!important');
+	display: block !important;
+	z-index: 2 !important;
+}
+
+.hw-fade--workin.inline-block,
+.hw-fade--in.inline-block {
+	display: inline-block !important
+}
+
+.hw-fade--out {
+	.opacity(0, ~'!important')
+}
+
+.hw-fade--slide-up {
+	.transition(all, .35s);
+	height: 0 !important
 }

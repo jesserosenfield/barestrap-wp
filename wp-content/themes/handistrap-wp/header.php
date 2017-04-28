@@ -1,4 +1,6 @@
 <?php
+echo phpinfo();
+
 global $css_file_name;
 global $css_file_name_all;
 $SSD = get_bloginfo('stylesheet_directory');
@@ -83,8 +85,8 @@ $fav192 = wp_get_attachment_image_src($fav, 'fav192');
 		  loadCSS( "<?php bloginfo('stylesheet_directory'); ?>/assets/css/font-face.css" );
 		</script>
 -->
-		<link href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/font-face.css" rel="stylesheet">
 		
+<<<<<<< HEAD
 		<?php if($GLOBALS[ 'testing' ] == false) { ?>
 			<style><?php include($ssd . 'assets/css/framework-inline.php'); include($ssd . 'assets/css/header-inline.php'); ?></style>
 		<?php } elseif($GLOBALS[ 'testing' ] == true) { ?>
@@ -93,6 +95,20 @@ $fav192 = wp_get_attachment_image_src($fav, 'fav192');
 				<?php echo file_get_contents( $ssd .'/assets/css/cache/'.$header_file_name); ?>
 			</style>
 		<?php } ?>
+=======
+		<style>
+			<?php
+				if($GLOBALS[ 'testing' ] == true) {
+					include($ssd . '/assets/css/framework-inline.php'); include($ssd . '/assets/css/header-inline.php');
+				} else {
+					$thecss = file_get_contents($framework_file_name);
+					$thecss .= file_get_contents($header_file_name);
+					
+					echo $css;
+				}
+			?>
+		</style>
+>>>>>>> 4b0543a957d0ed2784ac5c75785836acd1a645f0
 
 		<!--[if lt IE 9]>
 			<script src="<?php bloginfo('stylesheet_directory'); ?>/assets/js/plugins/html5shiv.js"></script>
