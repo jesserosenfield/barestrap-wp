@@ -1,5 +1,4 @@
 <?php
-	include_once('assets/functions/theme-setup.php');
 	include_once('assets/functions/cleanup.php');
 	include_once('assets/functions/header-menu.php');
 	include_once('assets/functions/menu-accordion.php');
@@ -8,7 +7,7 @@
 	include_once('assets/functions/scripts-styles.php');
 	include_once('assets/functions/admin-functions.php');
 
-	include_once('assets/functions/twitter.php');
+	//include_once('assets/functions/twitter.php');
  	
 	include_once('assets/functions/theme-options.php');	
 	include_once('assets/functions/acf-templates/acf-banner-slideshow.php');
@@ -29,19 +28,17 @@
 	add_image_size('post_imgcol2x', 800, 9999, false);
 	add_image_size('post_twocol2x', 880, 9999, false);
 
-	if($_GET['page'] == 'theme-general-settings' || !is_admin()) {
-		add_image_size('fav16', 16, 16, true);
-		add_image_size('fav32', 32, 32, true);
-		add_image_size('fav57', 57, 57, true);
-		add_image_size('fav60', 60, 60, true);
-		add_image_size('fav72', 72, 72, true);
-		add_image_size('fav76', 76, 76, true);
-		add_image_size('fav96', 96, 96, true);
-		add_image_size('fav114', 114, 114, true);
-		add_image_size('fav120', 120, 120, true);
-		add_image_size('fav144', 144, 144, true);
-		add_image_size('fav152', 152, 152, true);
-		add_image_size('fav180', 180, 180, true);
-		add_image_size('fav196', 196, 196, true);
-	}	
+	add_image_size('fav16', 16, 16, true);
+	add_image_size('fav32', 32, 32, true);
+	add_image_size('fav57', 57, 57, true);
+	add_image_size('fav60', 60, 60, true);
+	add_image_size('fav72', 72, 72, true);
+	add_image_size('fav76', 76, 76, true);
+	add_image_size('fav96', 96, 96, true);
+	add_image_size('fav114', 114, 114, true);
+	add_image_size('fav120', 120, 120, true);
+	add_image_size('fav144', 144, 144, true);
+	add_image_size('fav152', 152, 152, true);
+	add_image_size('fav180', 180, 180, true);
+	add_image_size('fav196', 196, 196, true);
 ?>

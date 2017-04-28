@@ -31,6 +31,15 @@
 	pointer-events: none
 }
 
+.trans-none {
+	-webkit-transition: none 0s;
+	-moz-transition: none 0s;
+	-ms-transition: none 0s; /* IE10 is actually unprefixed */
+	-o-transition: none 0s;
+	transition: none 0s;		
+	
+}
+
 // init functions
 .make-layout-classes(@prefix: ~'') {
 	.abs@{prefix} {position: absolute !important}
@@ -79,6 +88,10 @@
 	}
 }
 
+[class*="flex-wrap"].tal {
+	justify-content: left;
+}
+
 .make-layout-classes();
 
 // global
@@ -92,6 +105,10 @@
 // global
 @media (min-width: 768px) {
   .make-layout-classes(@prefix: -768);
+}
+// global
+@media (min-width: 769px) {
+  .make-layout-classes(@prefix: -769);
 }
 // global
 @media (min-width: 992px) {
@@ -171,17 +188,20 @@ img.img-fluid {
 	display:block
 }
 
-.bg-cover {background-size: cover !important}
-.bg-contain {background-size: contain !important}
-.bg-center {background-size: 75% auto !important}
-.bg-pos-center {background-position: center center}
-.bg-height100 {background-size: auto 100%}
+.bg-cover, .bg-cover .bg-item {background-size: cover !important}
+.bg-contain, bg-contain .bg-item {background-size: contain !important}
+.bg-center, .bg-center .bg-item {background-size: 75% auto !important}
+.bg-pos-center, .bg-center .bg-item {background-position: center center}
+.bg-height100, .bg-height100 .bg-item {background-size: auto 100%}
 
 .bg-cover,
 .bg-contain,
 .bg-height100 {
-	background-position: center center;
-	background-repeat: no-repeat
+	&,
+	.bg-item {
+		background-position: center center;
+		background-repeat: no-repeat
+	}
 }
 
 @media (max-width: 768px) {
@@ -277,6 +297,9 @@ img.img-fluid {
 // global
 @media (min-width: 768px) {
   .make-space(@prefix: -768);
+}
+@media (min-width: 769px) {
+  .make-space(@prefix: -769);
 }
 // global
 @media (min-width: 992px) {
@@ -501,7 +524,6 @@ img.img-fluid {
 
 .jump-flex-link:before {
 	font-family: 'me';
-	//content: @icon-carrot-right;
 	display: inline-block;
 	width: 30px;
 	position: absolute;

@@ -88,8 +88,10 @@ $fav192 = wp_get_attachment_image_src($fav, 'fav192');
 		<?php if($GLOBALS[ 'testing' ] == false) { ?>
 			<style><?php include($ssd . 'assets/css/framework-inline.php'); include($ssd . 'assets/css/header-inline.php'); ?></style>
 		<?php } elseif($GLOBALS[ 'testing' ] == true) { ?>
-			<link rel="stylesheet" href="<?php echo $ssdurl; ?>/assets/css/cache/<?php echo $framework_file_name; ?>" />
-			<link rel="stylesheet" href="<?php echo $ssdurl; ?>/assets/css/cache/<?php echo $header_file_name; ?>" />
+			<style>
+				<?php echo file_get_contents( $ssd .'/assets/css/cache/'.$framework_file_name); ?>
+				<?php echo file_get_contents( $ssd .'/assets/css/cache/'.$header_file_name); ?>
+			</style>
 		<?php } ?>
 
 		<!--[if lt IE 9]>

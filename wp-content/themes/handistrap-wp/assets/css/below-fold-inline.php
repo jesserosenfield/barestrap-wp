@@ -15,6 +15,8 @@
 
 	$parser->parseFile( $path . "/wp-content/themes/$themename/assets/css/below-fold.less", "{$SSD}/" );
 	$css = $parser->getCss();
-		
+	
+	file_put_contents($templatedir . "/assets/css/footer.css", $css);
+	
 	echo $css;
 ?>

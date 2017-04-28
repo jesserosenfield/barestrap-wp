@@ -1,6 +1,26 @@
 <?php
 	if(is_admin()) {
+		include_once('theme-setup.php');
+
+
+		function my_acf_admin_head() {
+			?>
+			<script type="text/javascript">
+			(function($){
 		
+				$(window).load(function(){
+		            $( ".layout" ).not('.-collapsed').find('.acf-fc-layout-handle').each(function( index ) {
+		              $( this ).click();
+		            });		            
+		        });
+		
+			})(jQuery);
+			</script>
+			<?php
+		}
+		
+		add_action('acf/input/admin_head', 'my_acf_admin_head');
+				
 		function cc_mime_types($mimes) {
 		  $mimes['svg'] = 'image/svg+xml';
 		  return $mimes;
