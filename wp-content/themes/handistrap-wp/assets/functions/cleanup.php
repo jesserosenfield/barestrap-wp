@@ -4,6 +4,7 @@
 		remove_action('wp_head', '_admin_bar_bump_cb');
 	}
 
+/*
 	function unhook_parent_style() {
 	
 	  wp_dequeue_style( 'twentyfifteen-style' );
@@ -22,6 +23,7 @@
 		wp_dequeue_style( 'twentyfifteen-fonts' );
 		wp_dequeue_style( 'genericons' );
 	}
+*/
 
 	function my_remove_recent_comments_style() {
 		global $wp_widget_factory;
@@ -47,7 +49,7 @@
 		remove_action( 'wp_head', 'wp_generator' );
 	
 		add_action('get_header', 'my_filter_head');
-		add_action( 'wp_print_styles', 'remove_twentyfifteen_styles' );
+		//add_action( 'wp_print_styles', 'remove_twentyfifteen_styles' );
 		add_action( 'after_setup_theme', 'twentyfifteenchild_remove_custom_header', 11 );
 		add_action( 'widgets_init', 'my_remove_recent_comments_style' );
 

@@ -23,7 +23,7 @@ var debounce = function (func, threshold, execAsap) {
 			var $me = jQuery(this);
 			$me.removeAttr('style');
 			
-			$me.removeClass('hw-fade--slide-up');
+			$me.removeClass('hw-fade--slide-up hw-fade--out');
 
 			if(inlineblock == true) {
 				$me.addClass('hw-fade--workin inline-block');
@@ -43,6 +43,7 @@ var debounce = function (func, threshold, execAsap) {
 				timeout,
 				myCallback = function(){
 					$me.removeClass('hw-fade--workin inline-block');
+					$me.addClass('hw-fade--out');
 		
 					if(typeof callback !== 'undefined' && callback !== null) {
 						callback();

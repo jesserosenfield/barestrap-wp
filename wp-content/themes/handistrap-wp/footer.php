@@ -6,17 +6,12 @@ global $css_file_name_all;
 			
 		</div> <!-- content -->
 		
-		<?php echo get_tweet(); ?>
-		<?php include('templates/instagram-feed.php'); ?>
-		
 		<script>
 			var homeurl = "<?php bloginfo('wpurl'); ?>";
 		</script>
 		
 		<style><?php include('assets/css/below-fold-inline.php'); ?></style>
-		
-		<?php include('templates/internal-nav-script.php'); ?>
-		
+				
 		<script>
 			jQuery(document).ready(function($){
 				$(document).foundation();
@@ -24,7 +19,7 @@ global $css_file_name_all;
 		</script>
 		
 		<?php
-			wp_dequeue_script('twentyfifteen-navigation');
+			//wp_dequeue_script('twentyfifteen-navigation');
 			wp_footer();
 		?>
 
