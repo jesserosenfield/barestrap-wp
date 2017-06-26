@@ -1,8 +1,6 @@
 <?php
-echo phpinfo();
+global $below_file_name;
 
-global $css_file_name;
-global $css_file_name_all;
 $SSD = get_bloginfo('stylesheet_directory');
 $GLOBALS[ 'themename' ] = 'handistrap-wp';
 $themename = $GLOBALS[ 'themename' ];
@@ -14,11 +12,9 @@ ini_set('display_startup_errors', 1);
 
 include 'lessc.inc.php';
 
-global $css_file_name;
-global $css_file_name_all;
-
 $header_files = array( $ssd  . "/assets/css/header.less" => $ssd );
 $framework_files = array( $ssd  . "/assets/css/framework.less" => $ssd );
+$below_files = array( $ssd  . "/assets/css/below-fold.less" => $ssd );
 
 $options = array(
 	'cache_dir' =>  $ssd . "/assets/css/cache/",
@@ -30,6 +26,7 @@ $options = array(
 
 $framework_file_name = Less_Cache::Get( $framework_files, $options );
 $header_file_name = Less_Cache::Get( $header_files, $options );
+$below_file_name = Less_Cache::Get( $below_files, $options );
 
 /*
 try {
@@ -86,7 +83,6 @@ $fav192 = wp_get_attachment_image_src($fav, 'fav192');
 		</script>
 -->
 		
-<<<<<<< HEAD
 		<?php if($GLOBALS[ 'testing' ] == false) { ?>
 			<style><?php include($ssd . 'assets/css/framework-inline.php'); include($ssd . 'assets/css/header-inline.php'); ?></style>
 		<?php } elseif($GLOBALS[ 'testing' ] == true) { ?>
@@ -95,20 +91,6 @@ $fav192 = wp_get_attachment_image_src($fav, 'fav192');
 				<?php echo file_get_contents( $ssd .'/assets/css/cache/'.$header_file_name); ?>
 			</style>
 		<?php } ?>
-=======
-		<style>
-			<?php
-				if($GLOBALS[ 'testing' ] == true) {
-					include($ssd . '/assets/css/framework-inline.php'); include($ssd . '/assets/css/header-inline.php');
-				} else {
-					$thecss = file_get_contents($framework_file_name);
-					$thecss .= file_get_contents($header_file_name);
-					
-					echo $css;
-				}
-			?>
-		</style>
->>>>>>> 4b0543a957d0ed2784ac5c75785836acd1a645f0
 
 		<!--[if lt IE 9]>
 			<script src="<?php bloginfo('stylesheet_directory'); ?>/assets/js/plugins/html5shiv.js"></script>

@@ -1,22 +1,34 @@
 <?php
-global $css_file_name;
-global $css_file_name_all;
+global $below_file_name;
 ?>			
 			</div>
 			
 		</div> <!-- content -->
 		
-		<?php echo get_tweet(); ?>
-		<?php include('templates/instagram-feed.php'); ?>
+		<?php //echo get_tweet(); ?>
+		<?php //include('templates/instagram-feed.php'); ?>
 		
 		<script>
 			var homeurl = "<?php bloginfo('wpurl'); ?>";
 		</script>
 		
-		<style><?php include('assets/css/below-fold-inline.php'); ?></style>
 		
-		<?php include('templates/internal-nav-script.php'); ?>
 		
+		
+		
+		
+		<?php if($GLOBALS[ 'testing' ] == false) { ?>
+			<style><?php include($ssd . 'assets/css/below-fold-inline.php'); ?></style>
+		<?php } elseif($GLOBALS[ 'testing' ] == true) { ?>
+			<style>
+				<?php echo file_get_contents( $ssd .'/assets/css/cache/'.$below_file_name); ?>
+			</style>
+		<?php } ?>				
+
+
+
+
+
 		<script>
 			jQuery(document).ready(function($){
 				$(document).foundation();
