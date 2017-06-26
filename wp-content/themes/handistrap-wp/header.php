@@ -8,7 +8,7 @@ $themename = $GLOBALS[ 'themename' ];
 $ssd = get_stylesheet_directory();
 $ssdurl = get_bloginfo('stylesheet_directory');
 
-$GLOBALS[ 'testing' ] = false; 
+$GLOBALS[ 'testing' ] = false;
 $GLOBALS[ 'themename' ] = 'handistrap-wp';
 
 ini_set('display_errors', 1);
@@ -90,7 +90,7 @@ include('templates/header/favicon.php');
 		?>
 	</head>
 	
-	<body>
+	<body<?php if(get_field('sticky_header', 'option') == true) { echo ' class="header-fixed"'; } ?>>
 		<div id="content" <?php body_class(); ?>>
 
 			<header id="header" class="group mob-menu-abs">
@@ -100,7 +100,6 @@ include('templates/header/favicon.php');
 
 							<div class="table logo-wrap">
 								<div class="table-cell">
-									<a class="logo"<?php if(!is_front_page()) { echo ' href="' . get_bloginfo('wpurl') . '"'; } ?>>
 										<?php
 											$logo = get_field('logo_img', 'option');
 											$logoalt = get_field('logo_img_alt', 'option');
@@ -108,12 +107,15 @@ include('templates/header/favicon.php');
 											$src = get_bloginfo('stylesheet_directory') . '/assets/images/logo.png';
 											
 											if( !empty($logo) ) {
-												$src = wp_get_attachment_image_src($logo['id'], 'full');
+												$src = wp_get_attachment_image_src($logo['id'], 'header_logo');
 													$src = $src[0];
+												
+												echo '<a class="logo"'; if(!is_front_page()) { echo ' href="' . get_bloginfo('wpurl') . '"'; } echo '>
+													<img src="' . $src . '" />
+												</a>';
 											}
 										?>
 										
-										<img src="<?php echo $src; ?>" />
 									</a>
 								</div>
 							</div>
