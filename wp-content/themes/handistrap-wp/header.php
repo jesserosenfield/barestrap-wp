@@ -1,34 +1,20 @@
 <?php
 global $css_file_name;
 global $css_file_name_all;
-$GLOBALS[ 'testing' ] = true; 
-$GLOBALS[ 'themename' ] = 'handistrap-wp';
-
+global $framework_file_name;
+global $header_file_name;
 $SSD = get_bloginfo('stylesheet_directory');
 $themename = $GLOBALS[ 'themename' ];
 $ssd = get_stylesheet_directory();
 $ssdurl = get_bloginfo('stylesheet_directory');
 
+$GLOBALS[ 'testing' ] = false; 
+$GLOBALS[ 'themename' ] = 'handistrap-wp';
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
-include 'lessc.inc.php';
-
-$header_files = array( $ssd  . "/assets/css/header.less" => $ssd );
-$framework_files = array( $ssd  . "/assets/css/framework.less" => $ssd );
-
-$options = array(
-	'cache_dir' =>  $ssd . "/assets/css/cache/",
-	'compress' => true,
-    'sourceMap'         => true,
-    'sourceMapWriteTo'  => $ssd  . '/assets/css/map.map',
-    'sourceMapURL'      => $ssd . '/assets/css/map.map',
-);
-
-$framework_file_name = Less_Cache::Get( $framework_files, $options );
-$header_file_name = Less_Cache::Get( $header_files, $options );
-
-
+include('templates/header/less.php');
 include('templates/header/favicon.php');
 ?>
 
@@ -58,10 +44,10 @@ include('templates/header/favicon.php');
 				if($GLOBALS[ 'testing' ] == true) {
 					include($ssd . '/assets/css/framework-inline.php'); include($ssd . '/assets/css/header-inline.php');
 				} else {
-					$thecss = file_get_contents($framework_file_name);
-					$thecss .= file_get_contents($header_file_name);
+					$thecss = file_get_contents($ssd . '/assets/css/cache/' . $framework_file_name);
+					$thecss .= file_get_contents($ssd . '/assets/css/cache/' . $header_file_name);
 					
-					echo $css;
+					echo $thecss;
 				}
 			?>
 		</style>
