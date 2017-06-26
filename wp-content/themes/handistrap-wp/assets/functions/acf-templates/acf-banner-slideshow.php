@@ -1,7 +1,7 @@
 <?php
-add_image_size( 'bf-slide-lg', 1600, 999 );
-add_image_size( 'bf-slide-med', 1000, 999 );
-add_image_size( 'bf-slide-sm', 600, 999 );
+add_image_size( 'hw-slide-lg', 1600, 999 );
+add_image_size( 'hw-slide-med', 1000, 999 );
+add_image_size( 'hw-slide-sm', 600, 999 );
 
 if( function_exists('acf_add_local_field_group') ):
 

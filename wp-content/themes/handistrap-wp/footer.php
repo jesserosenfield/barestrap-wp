@@ -5,17 +5,9 @@ global $below_file_name;
 			
 		</div> <!-- content -->
 		
-		<?php //echo get_tweet(); ?>
-		<?php //include('templates/instagram-feed.php'); ?>
-		
 		<script>
 			var homeurl = "<?php bloginfo('wpurl'); ?>";
 		</script>
-		
-		
-		
-		
-		
 		
 		<?php if($GLOBALS[ 'testing' ] == false) { ?>
 			<style><?php include($ssd . 'assets/css/below-fold-inline.php'); ?></style>
@@ -23,12 +15,8 @@ global $below_file_name;
 			<style>
 				<?php echo file_get_contents( $ssd .'/assets/css/cache/'.$below_file_name); ?>
 			</style>
-		<?php } ?>				
-
-
-
-
-
+		<?php } ?>		
+						
 		<script>
 			jQuery(document).ready(function($){
 				$(document).foundation();
@@ -36,7 +24,7 @@ global $below_file_name;
 		</script>
 		
 		<?php
-			wp_dequeue_script('twentyfifteen-navigation');
+			//wp_dequeue_script('twentyfifteen-navigation');
 			wp_footer();
 		?>
 

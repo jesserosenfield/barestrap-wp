@@ -5,8 +5,8 @@
 ?>
 
 <div
-	class="bf-slideshow vh100 pr"
-	data-cycle-slides=".bf-slide"
+	class="hw-slideshow vh100 pr"
+	data-cycle-slides=".hw-slide"
 >
 
 <?php
@@ -71,13 +71,13 @@
 ?>
 	
 	<div
-		id="bf-slide<?php echo $slidecounter; ?>"
-		class="bf-slide-wrap"
+		id="hw-slide<?php echo $slidecounter; ?>"
+		class="hw-slide-wrap"
 	>
 		
-		<div class="intch-loading bf-slide-wrap bf-slide-bg" <?php if(!empty($intch_html)) echo $intch_html; ?>></div>
+		<div class="intch-loading hw-slide-wrap hw-slide-bg" <?php if(!empty($intch_html)) echo $intch_html; ?>></div>
 		
-		<div class="bf-slide-wrap bf-slide-text-wrap">
+		<div class="hw-slide-wrap hw-slide-text-wrap">
 			<div class="table w100">
 				<div class="table-cell">
 					<div class="container-fluid">
@@ -85,9 +85,9 @@
 							<div class="col-xs-12 col-992-9 col-1200-6">
 		
 		
-								<h2 class="bf-slide-title alpha"><?php echo $slide['slide_title']; ?></h2>
+								<h2 class="hw-slide-title alpha"><?php echo $slide['slide_title']; ?></h2>
 								
-								<div class="bf-slide-text">
+								<div class="hw-slide-text">
 									<?php echo $slide['slide_text']; ?>
 								</div>						
 							</div>

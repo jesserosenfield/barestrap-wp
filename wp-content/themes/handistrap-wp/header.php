@@ -1,16 +1,17 @@
 <?php
 global $below_file_name;
-
+global $framework_file_name;
+global $header_file_name;
 $SSD = get_bloginfo('stylesheet_directory');
-$GLOBALS[ 'themename' ] = 'handistrap-wp';
 $themename = $GLOBALS[ 'themename' ];
 $ssd = get_stylesheet_directory();
 $ssdurl = get_bloginfo('stylesheet_directory');
 
+$GLOBALS[ 'testing' ] = false;
+$GLOBALS[ 'themename' ] = 'handistrap-wp';
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-
-include 'lessc.inc.php';
 
 $header_files = array( $ssd  . "/assets/css/header.less" => $ssd );
 $framework_files = array( $ssd  . "/assets/css/framework.less" => $ssd );
@@ -61,6 +62,10 @@ $fav144 = wp_get_attachment_image_src($fav, 'fav144');
 $fav152 = wp_get_attachment_image_src($fav, 'fav152');
 $fav180 = wp_get_attachment_image_src($fav, 'fav180');
 $fav192 = wp_get_attachment_image_src($fav, 'fav192');
+=======
+include('templates/header/less.php');
+include('templates/header/favicon.php');
+>>>>>>> 5ec886a4030c0e55cd610834e2d6ce8b1229300f
 ?>
 
 <!DOCTYPE HTML>
@@ -83,14 +88,15 @@ $fav192 = wp_get_attachment_image_src($fav, 'fav192');
 		</script>
 -->
 		
-		<?php if($GLOBALS[ 'testing' ] == false) { ?>
-			<style><?php include($ssd . 'assets/css/framework-inline.php'); include($ssd . 'assets/css/header-inline.php'); ?></style>
-		<?php } elseif($GLOBALS[ 'testing' ] == true) { ?>
-			<style>
-				<?php echo file_get_contents( $ssd .'/assets/css/cache/'.$framework_file_name); ?>
-				<?php echo file_get_contents( $ssd .'/assets/css/cache/'.$header_file_name); ?>
-			</style>
-		<?php } ?>
+
+		<style>
+			<?php
+				$thecss = file_get_contents($ssd . '/assets/css/cache/' . $framework_file_name);
+				$thecss .= file_get_contents($ssd . '/assets/css/cache/' . $header_file_name);
+				
+				echo $thecss;
+			?>
+		</style>
 
 		<!--[if lt IE 9]>
 			<script src="<?php bloginfo('stylesheet_directory'); ?>/assets/js/plugins/html5shiv.js"></script>
@@ -130,7 +136,7 @@ $fav192 = wp_get_attachment_image_src($fav, 'fav192');
 		?>
 	</head>
 	
-	<body>
+	<body<?php if(get_field('sticky_header', 'option') == true) { echo ' class="header-fixed"'; } ?>>
 		<div id="content" <?php body_class(); ?>>
 
 			<header id="header" class="group mob-menu-abs">
@@ -140,7 +146,6 @@ $fav192 = wp_get_attachment_image_src($fav, 'fav192');
 
 							<div class="table logo-wrap">
 								<div class="table-cell">
-									<a class="logo"<?php if(!is_front_page()) { echo ' href="' . get_bloginfo('wpurl') . '"'; } ?>>
 										<?php
 											$logo = get_field('logo_img', 'option');
 											$logoalt = get_field('logo_img_alt', 'option');
@@ -148,12 +153,15 @@ $fav192 = wp_get_attachment_image_src($fav, 'fav192');
 											$src = get_bloginfo('stylesheet_directory') . '/assets/images/logo.png';
 											
 											if( !empty($logo) ) {
-												$src = wp_get_attachment_image_src($logo['id'], 'full');
+												$src = wp_get_attachment_image_src($logo['id'], 'header_logo');
 													$src = $src[0];
+												
+												echo '<a class="logo"'; if(!is_front_page()) { echo ' href="' . get_bloginfo('wpurl') . '"'; } echo '>
+													<img src="' . $src . '" />
+												</a>';
 											}
 										?>
 										
-										<img src="<?php echo $src; ?>" />
 									</a>
 								</div>
 							</div>

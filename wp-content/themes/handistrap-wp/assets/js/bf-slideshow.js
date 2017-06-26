@@ -1,7 +1,7 @@
 (function($) {
 	
 	$(document).ready(function(){
-		$( '.bf-slideshow' ).cycle();
+		$( '.hw-slideshow' ).cycle();
 	});
 
 })(jQuery);

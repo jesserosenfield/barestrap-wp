@@ -310,4 +310,8 @@
 	
 	  return implode(array_slice($parts, 0, $last_part));
 	}
+	
+	function hasHwSlideshow() {
+	
+	}
 ?>

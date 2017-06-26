@@ -7,10 +7,12 @@
 			function remove_scripts() {
 				wp_dequeue_script( 'jquery-ui-core' );
 				wp_dequeue_script( 'jquery-ui-datepicker' ); 
+/*
 				wp_dequeue_script( 'twentyfifteen-script' ); 
 				wp_deregister_script( 'twentyfifteen-script' ); 
 				wp_dequeue_script( 'twentyfifteen-skip-link-focus-fix' );			
 				wp_deregister_script( 'twentyfifteen-skip-link-focus-fix' );			
+*/
 			}
 			
 			// wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );

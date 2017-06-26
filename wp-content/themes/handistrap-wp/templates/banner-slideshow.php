@@ -5,8 +5,8 @@
 ?>
 
 <div
-	class="bf-slideshow pr"
-	data-cycle-slides=".bf-slide"
+	class="vh100 hw-slideshow pr"
+	data-cycle-slides=".hw-slide"
 >
 
 <?php
@@ -76,32 +76,31 @@
 	if( !empty($overlayopacity) && $overlayopacity > 0 ) {
 		$overlayopacity = ($overlayopacity/100);
 
-		echo "<style>#bf-slide{$slidecounter}:after {-moz-opacity: {$overlayopacity} !important; -khtml-opacity: {$overlayopacity} !important; -webkit-opacity: {$overlayopacity} !important; opacity: {$overlayopacity} !important} </style>";
+		echo "<style>#hw-slide{$slidecounter}:after {-moz-opacity: {$overlayopacity} !important; -khtml-opacity: {$overlayopacity} !important; -webkit-opacity: {$overlayopacity} !important; opacity: {$overlayopacity} !important} </style>";
 	}
 ?>
 	
 	<div
-		id="bf-slide<?php echo $slidecounter; ?>"
-		class="bf-slide-wrap"
+		id="hw-slide<?php echo $slidecounter; ?>"
+		class="hw-slide-wrap"
 	>
 		
-		<div class="intch-loading bf-slide-wrap bf-slide-bg" <?php if(!empty($intch_html)) echo $intch_html; ?>></div>
+		<div class="intch-loading hw-slide-wrap hw-slide-bg" <?php if(!empty($intch_html)) echo $intch_html; ?>></div>
 		
-		<div class="bf-slide-wrap bf-slide-text-wrap">
+		<div class="hw-slide-wrap hw-slide-text-wrap">
 			<div class="table w100">
 				<div class="table-cell">
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-xs-12 col-992-9 col-1200-6">
 			
-								<h2 class="bf-slide-title alpha"><?php echo $slide['slide_title']; ?></h2>
+								<h2 class="hw-slide-title alpha mb3"><?php echo $slide['slide_title']; ?></h2>
 								
-								<div class="bf-slide-text">
+								<div class="hw-slide-text">
 									<?php echo $slide['slide_text']; ?>
 								</div>						
 							</div>
 						</div>
-	
 					</div>
 				</div>
 			</div>
@@ -121,5 +120,5 @@
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/assets/js/plugins/cycle2.js"></script>
 
 <script>
-	beam('<?php bloginfo('stylesheet_directory'); ?>/assets/js/bf-slideshow.js');
+	beam('<?php bloginfo('stylesheet_directory'); ?>/assets/js/hw-slideshow.js');
 </script>
