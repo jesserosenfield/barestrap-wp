@@ -40,14 +40,10 @@ include('templates/header/favicon.php');
 
 		<style>
 			<?php
-				if($GLOBALS[ 'testing' ] == true) {
-					include($ssd . '/assets/css/framework-inline.php'); include($ssd . '/assets/css/header-inline.php');
-				} else {
-					$thecss = file_get_contents($ssd . '/assets/css/cache/' . $framework_file_name);
-					$thecss .= file_get_contents($ssd . '/assets/css/cache/' . $header_file_name);
-					
-					echo $thecss;
-				}
+				$thecss = file_get_contents($ssd . '/assets/css/cache/' . $framework_file_name);
+				$thecss .= file_get_contents($ssd . '/assets/css/cache/' . $header_file_name);
+				
+				echo $thecss;
 			?>
 		</style>
 
@@ -149,4 +145,3 @@ include('templates/header/favicon.php');
 			</header> <!-- header -->
 			
 			<div id="switcheroo" class="ajax-fade">
-			
