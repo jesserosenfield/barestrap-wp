@@ -11,9 +11,9 @@ $ssdurl = get_bloginfo('stylesheet_directory');
 
 include realpath(dirname(__FILE__)) . '/../../lessc.inc.php';
 
-$below_files = array( $ssd  . "/assets/css/below-fold.less" => $ssd );
-$header_files = array( $ssd  . "/assets/css/header.less" => $ssd );
-$framework_files = array( $ssd  . "/assets/css/framework.less" => $ssd );
+$below_files = array( $ssd  . "/assets/css/below-fold.less" => $SSD );
+$header_files = array( $ssd  . "/assets/css/header.less" => $SSD );
+$framework_files = array( $ssd  . "/assets/css/framework.less" => $SSD );
 
 $options = array(
 	'cache_dir' =>  $ssd . "/assets/css/cache/",

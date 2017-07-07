@@ -1,6 +1,5 @@
 <?php
-global $css_file_name;
-global $css_file_name_all;
+global $below_file_name;
 global $framework_file_name;
 global $header_file_name;
 $SSD = get_bloginfo('stylesheet_directory');
