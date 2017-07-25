@@ -79,6 +79,58 @@ var debounce = function (func, threshold, execAsap) {
 	});
 	
 (function($) {
+
+	function play($el) {
+		var getHeight = function($el) {
+			var previousCss  = $el.attr("style");
+			
+			$el
+			    .css({
+			        position:   'absolute', // Optional if #myDiv is already absolute
+			        visibility: 'hidden',
+			        display:    'block'
+			    });
+			
+			optionHeight = $el.height();
+			console.log(optionHeight);
+			$el.attr("style", previousCss ? previousCss : "");
+			
+			return optionHeight;
+		}
+
+        var fader = function(next, $mypar, nextHeight) {
+	        $mypar.css({'height' : (nextHeight + 30) });
+        	next.addClass('active');
+			next.hwFadeIn();
+    	}
+    			
+		var $mypar = $el.parent(),
+			myparHeight = $mypar.height();
+		
+		$mypar.css({'height' : myparHeight + 30});
+		
+	    setInterval(function(){
+			
+	    	var cur = $el.filter('.active'),
+	        	next = cur.next($el);
+
+			cur.removeClass('active first-active');
+			
+	        if (!next.length) {
+	            next = $el.first();
+	        }
+	        
+	        var nextHeight = getHeight(next);
+
+	    	var doIt = function(){
+	    		fader(next, $mypar, nextHeight);
+	    	}
+	    	
+	        cur.hwFadeOut( doIt );
+	       
+	    }, 3000);
+	}
+	
 	$.extend($.lazyLoadXT, {
 	  edgeY:  1000,
 	});
