@@ -1,5 +1,9 @@
 <?php
 global $below_file_name;
+<<<<<<< HEAD
+global $ssd;
+=======
+>>>>>>> 6968884268344a6b6d004520795119eac142a9a2
 ?>			
 			</div>
 			
@@ -10,7 +14,7 @@ global $below_file_name;
 		</script>
 		
 		<?php if($GLOBALS[ 'testing' ] == false) { ?>
-			<style><?php include($ssd . 'assets/css/below-fold-inline.php'); ?></style>
+			<style><?php include($ssd . '/assets/css/below-fold-inline.php'); ?></style>
 		<?php } elseif($GLOBALS[ 'testing' ] == true) { ?>
 			<style>
 				<?php echo file_get_contents( $ssd .'/assets/css/cache/'.$below_file_name); ?>
