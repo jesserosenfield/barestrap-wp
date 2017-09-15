@@ -16,7 +16,7 @@
 .valign-b {vertical-align: bottom !important}
 
 .table-cell {
-	vertical-align: middle
+	vertical-align: middle;
 }
 
 .js .none-js {
@@ -70,8 +70,8 @@
 	.tac@{prefix} {text-align: center !important}
 	
 	.table@{prefix} {display: table !important}
-	.table@{prefix} .table-cell {display: table-cell !important}
-	.table@{prefix} .table-row {display: table-row !important}
+	.table@{prefix} > .table-cell, .table@{prefix} > .table-row > .table-cell {display: table-cell !important; 	float: none !important}
+	.table@{prefix} > .table-row {display: table-row !important}
 
 	.block@{prefix} {display: block !important}
 	.inline-block@{prefix} {display: inline-block !important}
@@ -284,16 +284,16 @@ img.img-fluid {
         &.pb@{i}@{prefix} {padding-bottom: @i * @spacer !important}
         &.pt@{i}@{prefix} {padding-top: @i * @spacer !important}
 
-        &.mb@{i}h@{prefix} {margin-bottom: @i * 1.5 * @spacer !important}
-        &.mt@{i}h@{prefix} {margin-top: @i * 1.5 * @spacer !important}
-        &.pb@{i}h@{prefix} {padding-bottom: @i * 1.5 * @spacer !important}
-        &.pt@{i}h@{prefix} {padding-top: @i * 1.5 * @spacer !important}
+        &.mb@{i}h@{prefix} {margin-bottom: @i * @spacer + (@spacer * .5) !important}
+        &.mt@{i}h@{prefix} {margin-top: @i * @spacer + (@spacer * .5) !important}
+        &.pb@{i}h@{prefix} {padding-bottom: @i * @spacer + (@spacer * .5) !important}
+        &.pt@{i}h@{prefix} {padding-top: @i * @spacer + (@spacer * .5) !important}
 
         &.mbh@{i}-n@{prefix} {margin-bottom: -@i * @spacer !important}
         &.mt@{i}-n@{prefix} {margin-top: -@i * @spacer !important}
 
-        &.mbh@{i}h-n@{prefix} {margin-bottom: -@i * 1.5 * @spacer !important}
-        &.mt@{i}h-n@{prefix} {margin-top: -@i * 1.5 * @spacer !important}
+        &.mbh@{i}h-n@{prefix} {margin-bottom: -@i * @spacer + (@spacer * .5) !important}
+        &.mt@{i}h-n@{prefix} {margin-top: -@i * @spacer + (@spacer * .5) !important}
                         
         .-((@i - 1));
     } .-;

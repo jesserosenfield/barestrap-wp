@@ -1,9 +1,6 @@
 <?php
 global $below_file_name;
-<<<<<<< HEAD
 global $ssd;
-=======
->>>>>>> 6968884268344a6b6d004520795119eac142a9a2
 ?>			
 			</div>
 			
