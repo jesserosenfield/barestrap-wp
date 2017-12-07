@@ -2,13 +2,13 @@
 global $below_file_name;
 global $framework_file_name;
 global $header_file_name;
+$GLOBALS[ 'testing' ] = false;
+$GLOBALS[ 'themename' ] = 'handistrap-wp';
+
 $SSD = get_bloginfo('stylesheet_directory');
 $themename = $GLOBALS[ 'themename' ];
 $ssd = get_stylesheet_directory();
 $ssdurl = get_bloginfo('stylesheet_directory');
-
-$GLOBALS[ 'testing' ] = false;
-$GLOBALS[ 'themename' ] = 'handistrap-wp';
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);

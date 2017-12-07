@@ -7,6 +7,7 @@
 	include_once('assets/functions/scripts-styles.php');
 	include_once('assets/functions/admin-functions.php');
 	
+	add_theme_support('post-thumbnails');
 	add_theme_support( 'menus' );
 	//include_once('assets/functions/twitter.php');
  	
