@@ -1,20 +1,35 @@
 === Safe SVG ===
 Contributors: enshrined
-Donate link: http://enshrined.co.uk
-Tags: svg, sanitize, uploads, sanitise, security, svg upload
+Donate link: https://wpsvg.com/
+Tags: svg, sanitize, upload, sanitise, security, svg upload, image, vector, file, graphic, media, mime
 Requires at least: 4.0
-Tested up to: 4.7.2
-Stable tag: 1.4.2
+Tested up to: 4.9.0
+Stable tag: 1.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Allow SVG uploads and sanitize them to stop XML/SVG vulnerabilities
+Enable SVG uploads and sanitize them to stop XML/SVG vulnerabilities in your WordPress website
 
 == Description ==
 
-Safe SVG gives you the ability to allow SVG uploads in WordPress and make sure that they're sanitized to stop SVG/XML vulnerabilities affecting your site.
+Safe SVG is the best way to Allow SVG Uploads in WordPress!
 
-This is more of a proof of concept for [#24251](https://core.trac.wordpress.org/ticket/24251) than anything but feel free to use it!
+It gives you the ability to allow SVG uploads whilst making sure that they're sanitized to stop SVG/XML vulnerabilities affecting your site.
+It also gives you the ability to preview your uploaded SVGs in the media library in all views.
+
+>**[Loving Safe SVG? Try the Pro version for extra features.](https://wpsvg.com/)**
+
+#### Free Features
+* **Sanitised SVGs** - Don't open up security holes in your WordPress site by allowing uploads of unsanitised files.
+* **View SVGs in the Media Library** - Gone are the days of guessing which SVG is the correct one, we'll enable SVG previews in the WordPress media library.
+
+#### Pro Features
+* **SVGO Optimisation** - You'll have the option to run your SVGs through our SVGO server on upload to save you space.
+* **Choose Who Can Upload** - Restrict SVG uploads to certain users on your WordPress site or allow anyone to upload.
+* **Premium Support** - Pro users get premium support whilst free support is offered in the WordPress forums in our spare time
+
+
+Initially a proof of concept for [#24251](https://core.trac.wordpress.org/ticket/24251)
 
 SVG Sanitization is done through the following library: [https://github.com/darylldoyle/svg-sanitizer](https://github.com/darylldoyle/svg-sanitizer)
 
@@ -23,6 +38,31 @@ SVG Sanitization is done through the following library: [https://github.com/dary
 Install through the WordPress directory or download, unzip and upload the files to your `/wp-content/plugins/` directory
 
 == Changelog ==
+
+= 1.5.3 =
+* 1.5.2 introduced an issue that can freeze the media library. This fixes that issue. Sorry!
+
+= 1.5.2 =
+* Tested with 4.9.0
+* Fixed an issue with SVGs when regenerating media
+
+= 1.5.1 =
+* Fix PHP strict standards warning
+
+= 1.5.0 =
+* Library update
+* role, aria- and data- attributes are now whitelisted to improve accessibility
+
+= 1.4.5 =
+* Fixes some issues with defining the size of an SVG.
+* Library update
+
+= 1.4.4 =
+* SVGs now display as featured images in the admin area
+
+= 1.4.3 =
+* WordPress 4.7.3 Compatibility
+* Expanded SVG previews in media library
 
 = 1.4.2 =
 * Added a check / fix for when mb_* functions are not available

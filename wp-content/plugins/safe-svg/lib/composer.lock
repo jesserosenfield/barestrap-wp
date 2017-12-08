@@ -9,16 +9,16 @@
     "packages": [
         {
             "name": "enshrined/svg-sanitize",
-            "version": "0.5.2",
+            "version": "0.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/darylldoyle/svg-sanitizer.git",
-                "reference": "59abb58f5cf68e55be5bfb93574c0e055c2a577d"
+                "reference": "0bdbbd15b9ca501c33c9373968922d055e7064db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/59abb58f5cf68e55be5bfb93574c0e055c2a577d",
-                "reference": "59abb58f5cf68e55be5bfb93574c0e055c2a577d",
+                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/0bdbbd15b9ca501c33c9373968922d055e7064db",
+                "reference": "0bdbbd15b9ca501c33c9373968922d055e7064db",
                 "shasum": ""
             },
             "require-dev": {
@@ -42,7 +42,7 @@
                 }
             ],
             "description": "An SVG sanitizer for PHP",
-            "time": "2017-02-23 17:42:17"
+            "time": "2017-06-20 16:13:01"
         }
     ],
     "packages-dev": [],
