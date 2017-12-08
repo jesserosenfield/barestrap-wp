@@ -114,11 +114,4 @@
 
 <script>
  	jQuery(document).foundation();
-	jQuery(document).foundation('interchange', 'reflow');
-</script>
-
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/assets/js/plugins/cycle2.js"></script>
-
-<script>
-	beam('<?php bloginfo('stylesheet_directory'); ?>/assets/js/hw-slideshow.js');
 </script>

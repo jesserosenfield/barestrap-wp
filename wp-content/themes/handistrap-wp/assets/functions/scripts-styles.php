@@ -20,6 +20,7 @@
 			// HEADER SCRIPTS
 			wp_enqueue_script( 'beam', get_bloginfo('stylesheet_directory') . '/assets/js/beam.js', false, '', false );
 			wp_enqueue_script( 'imgpreload', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/jquery.imgpreload.js', false, '', false);
+			wp_enqueue_script( 'popper', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/popper.js', false, 'jQuery', false );
 			wp_enqueue_script( 'bootstrap', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/bootstrap.js', false, 'jQuery', false );
 			wp_enqueue_script( 'foundation', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/foundation.min.js', false, 'jQuery', false );
 			// FOOTER SCRIPTS

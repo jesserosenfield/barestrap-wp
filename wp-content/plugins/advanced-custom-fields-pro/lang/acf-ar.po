@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advanced Custom Fields Pro\n"
 "POT-Creation-Date: 2017-06-27 15:37+1000\n"
-"PO-Revision-Date: 2017-11-28 11:54+1000\n"
+"PO-Revision-Date: 2017-06-27 15:37+1000\n"
 "Last-Translator: Elliot Condon <e@elliotcondon.com>\n"
 "Language-Team: Adil el hallaoui <servicewb11@gmail.com>\n"
 "Language: ar\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: acf.php:63
 msgid "Advanced Custom Fields"
-msgstr "الحقول المخصصة المتقدمة"
+msgstr "الحقول المخصصة المتقدم"
 
 #: acf.php:355 includes/admin/admin.php:117
 msgid "Field Groups"
@@ -2964,8 +2964,9 @@ msgid "Values will be saved as %s"
 msgstr ""
 
 #: pro/fields/class-acf-field-clone.php:920
+#, fuzzy
 msgid "Prefix Field Names"
-msgstr "بادئة أسماء الحقول"
+msgstr "اسم الحقل"
 
 #: pro/fields/class-acf-field-clone.php:1038
 #, fuzzy
@@ -2973,13 +2974,14 @@ msgid "Unknown field"
 msgstr "فيما يلي الحقول"
 
 #: pro/fields/class-acf-field-clone.php:1077
+#, fuzzy
 msgid "Unknown field group"
-msgstr "مجموعة حقل غير معروفة"
+msgstr "مزامنة مجموعة المجال"
 
 #: pro/fields/class-acf-field-clone.php:1081
 #, php-format
 msgid "All fields from %s field group"
-msgstr "جميع الحقول من المجموعة الحقلية %s"
+msgstr ""
 
 #: pro/fields/class-acf-field-flexible-content.php:42
 #: pro/fields/class-acf-field-repeater.php:230
@@ -3144,15 +3146,16 @@ msgstr "اختيار الحد الأقصى"
 
 #: pro/fields/class-acf-field-gallery.php:657
 msgid "Insert"
-msgstr "إدراج"
+msgstr ""
 
 #: pro/fields/class-acf-field-gallery.php:658
 msgid "Specify where new attachments are added"
-msgstr "حدد مكان إضافة المرفقات الجديدة"
+msgstr ""
 
 #: pro/fields/class-acf-field-gallery.php:662
+#, fuzzy
 msgid "Append to the end"
-msgstr "إلحاق بالنهاية"
+msgstr "يظهر بعد إدخال"
 
 #: pro/fields/class-acf-field-gallery.php:663
 msgid "Prepend to the beginning"

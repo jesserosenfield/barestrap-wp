@@ -80,7 +80,9 @@ include('templates/header/favicon.php');
 		<?php endif; ?>
 		
 		<?php
-			wp_enqueue_script('jquery');
+			wp_deregister_script( 'jquery' );
+			wp_enqueue_script( 'jquery', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/jquery.js', false, '', false );
+			wp_enqueue_script('jquery-migrate', false, array(), false, false);
 			wp_head();
 		?>
 	</head>

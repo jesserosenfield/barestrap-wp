@@ -29,7 +29,7 @@ RewriteCond %{HTTP:Cache-Control} !no-cache
 RewriteCond %{HTTP:If-Modified-Since} !no-cache
 RewriteCond %{REQUEST_FILENAME}%{ENV:ZIP_EXT} -f
 RewriteRule (.*) $1%{ENV:ZIP_EXT} [L]
-RewriteRule ^minify-b(\d+)-([a-zA-Z0-9-_.]+)\.(css|js)$ /barestrap-wp/index.php?blog=$1&min_group=$2&min_type=$3 [L]
+RewriteRule ^minify-b(\d+)-([a-zA-Z0-9-_.]+)\.(css|js)$ /handistrap-wp/index.php?blog=$1&min_group=$2&min_type=$3 [L]
 </IfModule>
 # END BWP Minify Rules
 <Limit POST PUT DELETE>

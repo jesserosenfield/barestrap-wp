@@ -24,25 +24,26 @@
 			$img_lg = $img_lg_field['url'];
 		
 		if(!empty($img_sm)) {
-			$ic_imgs[] = "[{$img_sm}, (default)]";
+			$ic_imgs[] = "[{$img_sm}, small]";
 		} else {
-			$img_sm = wp_get_attachment_image_src( $img_id, 'intch_med' );
-			$ic_imgs[] = "[{$img_sm[0]}, (default)]";
+			$img_sm = wp_get_attachment_image_src( $img_id, 'hw-slide-med' );
+			$ic_imgs[] = "[{$img_sm[0]}, small]";
 		}
 	
 		if(!empty($img_med)) {
-			$ic_imgs[] = "[{$img_med}, (medium)]";
+			$ic_imgs[] = "[{$img_med}, medium]";
 		} else {
-			$img_med = wp_get_attachment_image_src( $img_id, 'intch_lg' );
-			$ic_imgs[] = "[{$img_med[0]}, (medium)]";		
-			$ic_imgs[] = "[{$img_med[0]}, (retina)]";		
+			$img_med = wp_get_attachment_image_src( $img_id, 'hw-slide-lg' );
+			$ic_imgs[] = "[{$img_med[0]}, medium]";		
+			$ic_imgs[] = "[{$img_med[0]}, retina]";		
 		}
 	
 		if(!empty($img_lg)) {
-			$ic_imgs[] = "[{$img_lg}, (large)]";
+			$img_lg = wp_get_attachment_image_src( $img_id, 'hw-slide-xl' );
+			$ic_imgs[] = "[{$img_lg[0]}, large]";
 		} else {
-			$img_lg = wp_get_attachment_image_src( $img_id, 'full' );
-			$ic_imgs[] = "[{$img_lg[0]}, (large)]";		
+			$img_lg = wp_get_attachment_image_src( $img_id, 'hw-slide-xl' );
+			$ic_imgs[] = "[{$img_lg[0]}, large]";		
 		}
 		
 		if(!empty($ic_imgs)) {

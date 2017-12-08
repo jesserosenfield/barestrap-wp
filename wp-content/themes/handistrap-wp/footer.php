@@ -17,12 +17,6 @@ global $ssd;
 				<?php echo file_get_contents( $ssd .'/assets/css/cache/'.$below_file_name); ?>
 			</style>
 		<?php } ?>		
-						
-		<script>
-			jQuery(document).ready(function($){
-				$(document).foundation();
-			});
-		</script>
 		
 		<?php
 			//wp_dequeue_script('twentyfifteen-navigation');
