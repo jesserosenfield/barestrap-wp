@@ -42,7 +42,8 @@ include('templates/header/favicon.php');
 			<?php
 				$thecss = file_get_contents($ssd . '/assets/css/cache/' . $framework_file_name);
 				$thecss .= file_get_contents($ssd . '/assets/css/cache/' . $header_file_name);
-				
+				//$thecss .= file_get_contents($ssd . '/assets/css/font-face.css');
+			
 				echo $thecss;
 			?>
 		</style>

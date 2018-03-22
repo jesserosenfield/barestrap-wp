@@ -45,6 +45,12 @@
 	}
 }
 
+.flex-item--inner {
+	width: 100%;
+	max-width: 100%;
+	min-height:0
+}
+
 [class^="op0"] {
 	pointer-events: none
 }
@@ -105,6 +111,12 @@
 [class*="flex-wrap"].tal {
 	justify-content: left;
 }
+
+[class*="flex-wrap"].tar {
+	-ms-flex-direction: row-reverse;
+	flex-direction: row-reverse;
+}
+
 
 .make-layout-classes();
 

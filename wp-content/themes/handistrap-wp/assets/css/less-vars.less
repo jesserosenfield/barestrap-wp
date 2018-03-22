@@ -11,38 +11,42 @@
 @iconfont: 'me';
 @bodyfont: "Helvetica Neue", arial, helvetica, sans-serif;
 
-@icon-close: "\e905";
-@icon-mail: "\e902";
-@icon-facebook: "\e614";
-@icon-search: "\e61a";
-@icon-chevron-left: "\e600";
-@icon-chevron-right: "\e601";
-@icon-chevron-small-down: "\e602";
-@icon-chevron-small-left: "\e603";
-@icon-chevron-small-right: "\e604";
-@icon-chevron-small-up: "\e605";
+@icon-facebook-outline: "\e900";
+@icon-insta-outline: "\e903";
+@icon-twitter-outline: "\e90a";
+@icon-chevron-down: "\e602";
+@icon-chevron-left: "\e603";
+@icon-chevron-right: "\e604";
+@icon-chevron-up: "\e605";
 @icon-chevron-thin-down: "\e606";
 @icon-chevron-thin-left: "\e607";
 @icon-chevron-thin-right: "\e608";
 @icon-chevron-thin-up: "\e609";
-@icon-chevron-up: "\e60a";
-@icon-play: "\e904";
-@icon-triangle-down: "\e60b";
-@icon-triangle-left: "\e60c";
-@icon-triangle-right: "\e60d";
-@icon-triangle-up: "\e60e";
 @icon-minus: "\e610";
 @icon-plus: "\e611";
 @icon-soundcloud: "\e612";
 @icon-yelp: "\e613";
-@icon-google: "\e615";
-@icon-instagram: "\e900";
-@icon-linkedin: "\e616";
-@icon-pinterest: "\e617";
-@icon-tumblr: "\e903";
-@icon-twitter: "\e618";
-@icon-vimeo: "\e619";
-@icon-youtube: "\e901";
+@icon-play: "\e907";
+@icon-close: "\e905";
+@icon-arrow-right: "\e90b";
+@icon-arrow-left: "\e90c";
+@icon-arrow-down: "\e90d";
+@icon-arrow-up: "\e90e";
+@icon-mail: "\e901";
+@icon-search: "\e904";
+@icon-phone: "\e942";
+@icon-link: "\e9cb";
+@icon-google-plus: "\ea8b";
+@icon-facebook: "\ea90";
+@icon-instagram: "\ea92";
+@icon-twitter: "\ea96";
+@icon-youtube: "\ea9d";
+@icon-tumblr: "\eab9";
+@icon-soundcloud: "\eac3";
+@icon-linkedin: "\eaca";
+@icon-facebook-square: "\ea91";
+
+
 
 
 //====================================
@@ -229,11 +233,6 @@
 	display: flex !important;
 }
 
-
-/* =============================================================================
-	Colors
-   ========================================================================== */
-
 @colors: ~"black" #262626, ~"white" #fff;
 
 .ck(@key) {
@@ -245,34 +244,3 @@
 
     .--() {@ck: #000} .--;
 }
-
-.creatcolorclasses(@iterator:1) when(@iterator <= length(@colors)) {
-    @name: extract(extract(@colors, @iterator),1);
-    @thecolor: extract(extract(@colors, @iterator),2);
-    
-    .c-@{name} {
-        color: @thecolor !important;
-    }
-    
-    .c-@{name}-hover:hover {
-        color: @thecolor !important;
-    }
-    
-    .bg-@{name} {
-        background-color: @thecolor !important;
-    }
-    .bt-@{name} {
-        border-top: 1px solid @thecolor !important;
-    }   
-    .bb-@{name} {
-        border-bottom: 1px solid @thecolor !important;
-    }
-    .bt-@{name}-lg {
-        border-top: 5px solid @thecolor !important;
-    }   
-    .bb-@{name}-lg {
-        border-bottom: 5px solid @thecolor !important;
-    }
-    .creatcolorclasses((@iterator + 1));
-}
-.creatcolorclasses();

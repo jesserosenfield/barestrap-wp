@@ -77,7 +77,11 @@ var debounce = function (func, threshold, execAsap) {
 			setTimeout(timeout, 400);
 		}
 	});
-	
+
+jQuery(document).on('videLoad', function(){
+	$('.hw-slide-video').hwFadeIn();
+});	
+
 (function($) {
 
 	function play($el) {
@@ -172,11 +176,10 @@ var debounce = function (func, threshold, execAsap) {
 			        locked: false 
 			   }
 			}	
-		});
-	
+		});	
 	});
 	
-	$(window).load(function(){
+	$(window).on('load', function(){
 	
 		$('.flickity-yeah').flickity({
 			"wrapAround": false,
@@ -189,23 +192,26 @@ var debounce = function (func, threshold, execAsap) {
 			"cellAlign" : "left",
 			"imagesLoaded" : true
 		});
-		
+
 		// BOOTSTRAP MODAL PADDING FIX
-	    var oldSSB = $.fn.modal.Constructor.prototype.setScrollbar;
-	    $.fn.modal.Constructor.prototype.setScrollbar = function () 
-	    {
+	    var oldSSB = $.fn.modal.Constructor.prototype._setScrollbar;
+	    
+	    $.fn.modal.Constructor.prototype._setScrollbar = function () 
+	    {	
+	    
 	        oldSSB.apply(this);
-	        if(this.bodyIsOverflowing && this.scrollbarWidth) 
+	        
+	        if(this._isBodyOverflowing && this._scrollbarWidth) 
 	        {
-	            $('.fixed-nav').css('padding-right', this.scrollbarWidth);
+	            $('#header').css('padding-right', this._scrollbarWidth);
 	        }       
 	    }
 	
-	    var oldRSB = $.fn.modal.Constructor.prototype.resetScrollbar;
-	    $.fn.modal.Constructor.prototype.resetScrollbar = function () 
+	    var oldRSB = $.fn.modal.Constructor.prototype._resetScrollbar;
+	    $.fn.modal.Constructor.prototype._resetScrollbar = function () 
 	    {
 	        oldRSB.apply(this);
-	        $('.fixed-nav').css('padding-right', '');
+	        $('#header').css('padding-right', '');
 	    }
 
 

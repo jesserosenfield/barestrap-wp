@@ -35,7 +35,11 @@
 
 			wp_enqueue_script( 'fancybox', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/jquery.fancybox.js', false, '', true );
 
+			wp_enqueue_script( 'stickydrawer', get_bloginfo('stylesheet_directory') . '/assets/js/sticky-drawer.js', false, '', true );
+
 			wp_enqueue_script( 'global', get_bloginfo('stylesheet_directory') . '/assets/js/global.js', false, '', true );
+			
+			wp_enqueue_script( 'vide', get_bloginfo('stylesheet_directory') . '/assets/js/plugins/jquery.vide.min.js', false, '', true );
 		}
 		
 		add_action('wp_enqueue_scripts', 'bf_scripts');

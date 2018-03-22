@@ -16,6 +16,7 @@
 	include_once('assets/functions/acf-templates/acf-flex.php');
 	include_once('assets/functions/acf-templates/acf-theme-options.php');
 	include_once('assets/functions/acf-templates/acf-post-flex.php');
+	include_once('assets/functions/acf-templates/acf-schema.php');
 	//include_once('assets/functions/acf-templates/acf-jump-flex.php');
 
 	add_image_size('header_logo', 100, 60, false);

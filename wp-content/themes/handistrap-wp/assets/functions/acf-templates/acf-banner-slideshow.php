@@ -28,6 +28,25 @@ acf_add_local_field_group(array (
 			'button_label' => 'Add a slide',
 			'sub_fields' => array (
 				array (
+					'key' => 'field_5a3007818194f',
+					'label' => 'Video',
+					'name' => 'slide_video',
+					'type' => 'file',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',
+					'library' => 'all',
+					'min_size' => '',
+					'max_size' => '',
+					'mime_types' => '',
+				),
+				array (
 					'key' => 'field_55b947c26e787',
 					'label' => 'Image',
 					'name' => 'slide_img',
@@ -210,9 +229,9 @@ acf_add_local_field_group(array (
 	'location' => array (
 		array (
 			array (
-				'param' => 'page',
+				'param' => 'post_type',
 				'operator' => '==',
-				'value' => '4',
+				'value' => 'page',
 			),
 		),
 	),
